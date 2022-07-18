@@ -1,0 +1,1244 @@
+@charset "utf-8";
+
+// 游明朝体フォント
+@mixin yumincho($value) {
+    font-family: "游明朝","Yu Mincho","YuMincho",serif;
+    font-weight: $value;
+}
+
+// 欧文フォント
+@mixin georgia($value) {
+    font-family: "Georgia","Times","Times New Roman",serif;
+    font-weight: $value;
+}
+// VIEWボタン
+@mixin view {
+    width: 227px;
+    height: 44px;
+    text-align: center;
+    background-color: #908a32;
+    color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 3px 5px 10px 0px rgba(255,255,255,1) inset, -3px -5px 10px 0px rgba(0,0,0,0.9) inset;
+}
+// ホットペッパーボタン
+@mixin hotpepper {
+    width: 240px;
+    height: 56px;
+    text-align: center;
+    background-color: #00ffff;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px 0px rgba(255,255,255,0.5) inset, -3px -5px 10px 0px rgba(0,0,0,0.5) inset;
+}
+// ヘッダー
+@mixin header($value) {
+    width: 100%;
+    height: 140px;
+    font-size: 20px;
+    background-color: $value;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    position: fixed;
+    z-index: 20;
+}
+// ハンバーガーメニュー
+@mixin hamburger {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    width: 48px;
+    height: 48px;
+    z-index: 20;
+    border: none;
+    .btn__line {
+        display: block;
+        position: relative;
+        width: 70%;
+        height: 3px;
+        background-color: #267cfd;
+        transition: .2s;
+        top: 0px;
+        right: -5px;
+        &::before {
+            content: "";
+            position: absolute;
+            right: 0.5px;
+            width: 100%;
+            height: 100%;
+            background-color: #267cfd;
+            transition: .5s;
+            transform: translateY(-16px);
+            margin-top: 3px;
+        }
+        &::after {
+            @extend .btn__line::before;
+            transform: translateY(16px);
+            margin-top: -3px;
+        }
+        &.open {
+            background-color: transparent;
+            &::before {
+                transform: rotate(45deg); 
+                margin-top: 0;
+                background-color: red;
+            }
+            &::after {
+                transform: rotate(-45deg);
+                margin-top: 0;
+                background-color: red !important;
+            }
+        }
+    }
+    @media (min-width:768px) {
+        display: none;
+    }
+}
+
+@-webkit-keyframes zoomUp {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+    100% {
+        -webkit-transform: scale(1.15);
+        transform: scale(1.15);
+    }
+}  
+@keyframes zoomUp { /* 1.15倍させる指定 */
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+    100% {
+        -webkit-transform: scale(1.15);
+        transform: scale(1.15);
+    }
+}
+// フッター
+@mixin footer {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    padding-top: 42px;
+    background-image: url(../img/top_footer_pattern.jpg);
+    background-image: image-set(url(../img/top_footer_pattern.jpg) 1x, url(../img/top_footer_pattern@2x.jpg) 2x, url(../img/top_footer_pattern@3x.jpg) 3x);
+    .footer {
+        &__inner {
+            max-width: 1180px;
+            margin: 0 auto;
+            .footer__text {
+               font-size: 20px;
+               @include yumincho(900); 
+            }
+            .footer__wrapper {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 20px 0;
+                .footer {
+                    &__tel {
+                        font-size: 25px;
+                        @include yumincho(900);
+                    }
+                    &__logo {
+                        width: 130px;
+                        height: 185px;
+                        margin: 0 10%;
+                    }
+                    &__btn--pagenav {
+                        @include hotpepper;
+                        @include georgia(Bold);
+                        font-size: 20px;
+                        &:hover {
+                            filter: brightness(85%);
+                        }
+                    }
+                }
+            }
+            .footer__table {
+                margin: 0 auto;
+                .footer__line {
+                    .footer {
+                        &__category {
+                            @include georgia(100);
+                            font-size: 20px;
+                            width: 50%;
+                        }
+                        &__address {
+                            width: 60%;
+                            @include yumincho(400);
+                            font-size: 20px;
+                        }
+                        &__time {
+                            @extend .footer__address;
+                        }
+                        &__holiday {
+                            @extend .footer__address;
+                        } 
+                    }
+                }
+            }
+        }
+        &__copy {
+            color: #FFFFFF;
+            background-color: #000000;
+            display: block;
+            width: 100%;
+            height: 60px;
+            line-height: 60px;
+            font-size: 14px;
+            @include georgia(400);
+            margin-top: 13px;
+        }
+    }
+}
+/* ========================================
+            トップページ
+========================================= */
+/* ========================================
+                ヘッダー
+========================================= */
+.header-top {
+    @include georgia(Bold);
+    @include header(rgba(0,0,0,0));
+    .header {
+        &__logo {
+            width: 70px;
+            height: auto;
+            margin: 20px 50px 0 20px;
+        }
+        &__inner {
+            margin-top: 37px;
+            text-shadow: 1px 0 0 #dbba03,
+                         0 1px 0 #dbba03,
+                         -1px 0 0 #dbba03,
+                         0 -1px 0 #dbba03;
+            .global-nav__list {
+                display: flex;
+                flex-wrap: wrap;
+                .global-nav__item{
+                    margin-right: 50px;
+                }
+            }
+        }
+        &__btn--pagenav {
+            @include hotpepper;
+            margin: 23px 31px 0 0;
+            &:hover {
+                filter: brightness(85%);
+            }
+        }
+    }
+    .btn__js {
+        @include hamburger;
+    }
+    @media(max-width: 1400px) {
+        .header {
+            &__inner {
+                margin-top: 10px;
+                .global-nav {
+                    line-height: 3;
+                }
+            }
+            &__btn--pagenav {
+                font-size: 16px;
+            }
+        }
+    }
+    @media(max-width: 868px) {
+        .header__inner {
+            margin-top: 25px;
+            .global-nav {
+                line-height: 2;
+                font-size: 16px;
+            }
+        }
+    }
+    @media(max-width: 767px) {
+        height: 91px;
+        flex-direction: column;
+        .header {
+            &__logo {
+                margin-top: 10px;
+                .header__img {
+                    width: 50px;
+                }
+            }
+            &__inner {
+                .global-nav {
+                    line-height: 4;
+                    font-size: 16px;
+                    padding-left: 30px;
+                    position: fixed;
+                    top: 135px;
+                    right: -100%;
+                    width: 100%;
+                    height: 100%;
+                    transition: 0.7s;
+                    &.open {
+                        right: 0px;
+                        top: 0;
+                        transition: 0.7s;
+                        padding-top: 135px;
+                        background-color: rgba(183,255,255,0.75);
+                        font-size: 20px;
+                    }
+                    .global-nav__list {
+                        justify-content: center;
+                    }
+                }
+            }
+            &__btn--pagenav {
+                @include hotpepper;
+                width: 40%;
+                height: 44px;
+                position: absolute;
+                margin: 0;
+                top:21px;
+                left: 50%;
+                transform: translate(-50%, 0);
+            }
+        }
+    }
+}
+.header-top.scroll-nav {
+    @extend .header-top;
+    background-color: #FFFFFF;
+}
+/* ========================================
+            メインビジュアル
+========================================= */
+.main-top {
+    width: 100%;
+    /* ========================================
+                 ファーストビュー
+    ========================================= */
+    .firstview-top {
+        width: 100%;
+        height: 800px;
+        .swiper-slide {
+            overflow: hidden;
+            backface-visibility: hidden;
+            max-width: 100%;
+            .slide-img {
+                width: 100%;
+                background-position: top center;
+                height: 800px; /* 800pxの高さで表示させる */
+            }
+            .slide-sp {
+                display: none;
+            }
+        }
+        .swiper-slide-active {
+            .slide-img {
+                animation: zoomUp 12s linear 0s;
+                animation-fill-mode: both;
+            }
+        }
+        .swiper-slide-duplicate-active {
+            .slide-img {
+                animation: zoomUp 12s linear 0s;
+                animation-fill-mode: both;
+            }
+        }
+        .swiper-slide-prev {
+            .slide-img {
+                animation: zoomUp 12s linear 0s;
+                animation-fill-mode: both; 
+            }
+        }
+        @media(max-width: 1199px) {
+            height: auto;
+            .swiper-slide {
+                .slide-img {
+                    width: 100%;
+                    height: 600px;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                }
+            }
+        }
+        @media(max-width: 600px) {
+            .slider1 {
+                width: 100%;
+                .swiper-slide {
+                    width: 100%;
+                    .slide-img {
+                        display: none;
+                    }
+                    .slide-sp {
+                        display: block;
+                        height: 445px;
+                        background-size: cover;
+                        background-position: left 40%;
+                    }
+                }
+            }
+        }
+    }
+    /* ========================================
+                    お店紹介
+    ========================================= */
+    .intro-top {
+        width: 100%;
+        height: auto;
+        display: flex;
+        margin-top: 40px;
+        .intro {
+            &__thumb {
+                width: 50%;
+                max-width: 860px;
+                margin-right: 10%;
+                .intro__img {
+                    width: 100%;
+                }
+            }
+            &__wrapper {
+                font-size: 25px;
+                width: 35%;
+                @include yumincho(400);
+                .intro__title {
+                    margin-bottom: 85px;
+                }
+            }
+        }
+        @media (max-width: 1200px) {
+            .intro {
+                &__wrapper {
+                    font-size: 16px;
+                    .intro__title {
+                        margin-bottom: 45px;
+                    }
+                }
+            }
+        }
+        @media (max-width: 767px) {
+            flex-direction: column;
+            position: relative;
+            text-align: center;
+            .intro {
+                &__thumb {
+                    width: 100%;
+                    max-width: 860px;
+                    margin-right: 0;
+                }
+                &__wrapper {
+                    width: calc(100% - 10px);
+                    margin: 0 auto;
+                    text-shadow: 1px 0 0 #ffffff,
+                                 0 1px 0 #ffffff,
+                                 -1px 0 0 #ffffff,
+                                 0 -1px 0 #ffffff;
+                    position: absolute;
+                    top: 10%;
+                    left: 1%;
+                    .intro__title {
+                        margin-bottom: 5%;
+                    }
+                }
+            }
+        }
+    }
+    /* ========================================
+                    オーナー挨拶
+    ========================================= */
+    .greeting-top {
+        width: 100%;
+        height: auto;
+        background-image: url(../img/top_greeting_bg.jpg);
+        background-image: image-set(url(../img/top_greeting_bg.jpg) 1x, url(../img/top_greeting_bg@2x.jpg) 2x, url(../img/top_greeting_bg@3x.jpg) 3x);
+        margin-top: 70px;
+        .greeting__title {
+            @include georgia(Bold);
+            font-size: 45px;
+            font-style: italic;
+            text-align: center;
+            margin-bottom: 71px;
+        }
+        .greeting__wrapper {
+            display: flex;
+            justify-content:center;
+            width: 100%;
+            padding-left: 10%;
+            @include yumincho(400);
+            font-size: 18px;
+            .greeting {
+                &__text {
+                    width: 35%;
+                    margin-right: 10%;
+                }
+                &__thumb {
+                    width: 50%;
+                    max-width: 556px;
+                    .greeting__img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        @media (max-width: 767px) {
+            position: relative;
+            background-image: none;
+            margin-top: 40px;
+            .greeting__title {
+                font-size: 25px;
+                margin-bottom: 0px;
+                position: absolute;
+                z-index: 2;
+                left: 50%;
+                transform: translate(-50%, 0);
+            }
+            .greeting__wrapper {
+                flex-direction: column;
+                position: relative;
+                padding-left: 0;
+                font-size: 14px;
+                text-align: center;
+                .greeting {
+                    &__text {
+                        width: 100%;
+                        margin-right: 0;
+                        position: absolute;
+                        z-index: 2;
+                        top: 55%;
+                        text-shadow: 1px 0 0 #cfd6e5,
+                                     0 1px 0 #cfd6e5,
+                                     -1px 0 0 #cfd6e5,
+                                     0 -1px 0 #cfd6e5;
+                    }
+                    &__thumb {
+                        width: 100%;
+                        max-width: none;
+                        
+                    }
+                }
+            }
+        }
+    }
+    /* ========================================
+                    お店について
+    ========================================= */
+    .about-top {
+        width: 100%;
+        height: auto;
+        margin-top: 70px;
+        padding: 0 5%;
+        .about__title {
+            @include georgia(Bold);
+            font-size: 45px;
+            font-style: italic;
+            text-align: center;
+            margin-bottom: 91px;
+        }
+        .about__article {
+            width: 100%;
+            height: auto;
+            @include yumincho(400);
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            max-width: 1180px;
+            margin: 0 auto;
+            margin-bottom: 120px;
+            .about {
+                &__thumb {
+                    width: 78%;
+                    max-width: 617px;
+                    .about__img {
+                        width: 100%;
+                    }
+                }
+                &__text {
+                    width: 40%;
+                }
+            }
+            &:nth-of-type(2n-1) {
+                .about__text {
+                    margin-left: 14%;
+                }
+            }
+            &:nth-of-type(2n) {
+                .about__text {
+                    margin-right: 9%;
+                }
+            }
+            &:last-of-type {
+                margin-bottom: 0;
+            } 
+        }
+        @media (max-width:767px) {
+            margin-top: 40px;
+            padding: 0;
+            .about__title {
+                font-size: 25px;
+                margin-bottom: 0;
+            }
+            .about__article {
+                position: relative;
+                font-size: 14px;
+                flex-direction: column;
+                
+            
+                margin: 0;
+                .about {
+                    &__thumb {
+                        width: 100%;
+                        max-width: none;
+                        .about__img {
+                            width: 100%;
+                        }
+                    }
+                    &__text {
+                        width: 100%;
+                        bottom: 20%;
+                        color: #067e28;
+                        text-shadow: 1px 0 0 #f3f4f6,
+                                     0 1px 0 #f3f4f6,
+                                     -1px 0 0 #f3f4f6,
+                                     0 -1px 0 #f3f4f6;
+                    }
+                }
+                &:nth-of-type(2n-1) {
+                    .about__text {
+                        margin-left: 0;
+                        position: absolute;
+                        text-align: center;
+                    }
+                }
+                &:nth-of-type(2n) {
+                    .about__text {
+                        margin-right: 0;
+                        position: absolute;
+                        text-align: center;
+                        z-index: 2;
+                    }
+                }
+                &:last-of-type {
+                    margin-bottom: 0;
+                    .about__text {
+                        position: absolute;
+                        text-align: center;
+                    }
+                } 
+            }
+        }
+    }
+    /* ========================================
+                    スタイリスト
+    ========================================= */
+    .stylist-top {
+        width: 100%;
+        height: auto;
+        margin-top: 70px;
+        background-image: url(../img/top_stylist_bg.jpg);
+        background-image: image-set(url(../img/top_stylist_bg.jpg) 1x, url(../img/top_stylist_bg@2x.jpg) 2x, url(../img/top_stylist_bg@3x.jpg) 3x);
+        text-align: center;
+        .stylist__title {
+            @include georgia(Bold);
+            font-size: 45px;
+            font-style: italic;
+            text-align: center;
+            margin-bottom: 22px;
+        }
+        .stylist {
+            &__wrapper {
+                width: 100%;
+                max-width: 1180px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin: 0 auto;
+                @include yumincho(400);
+                font-size: 18px;
+                .stylist {
+                    &__thumb {
+                        width: 50%;
+                        .stylist__img {
+                            width: 100%;
+                        }
+                    }
+                    &__text {
+                        width: 40%;
+                    }
+                }
+            }
+            &__btn--view {
+                @include view;
+                @include georgia(Bold);
+                font-size: 22px;
+                margin-top: -40px;
+                &:hover {
+                    filter: brightness(75%);
+                }
+            }
+        }
+        @media (max-width: 767px) {
+            margin-top: 40px;
+            .stylist__title {
+                font-size: 25px;
+                margin-bottom: 15px;
+            }
+            .stylist {
+                &__wrapper {
+                    flex-direction: column;
+                    font-size: 14px;
+                    .stylist {
+                        &__thumb {
+                            width: 100%;
+                            padding-left: 60px;
+                            margin-top: 10px;
+                        }
+                        &__text {
+                            width: 70%;
+                        }
+                    }   
+                }
+                &__btn--view {
+                    font-size: 16px;
+                    margin-top: 0px;
+                
+                }
+            }
+        }
+    }
+    /* ========================================
+                    メニュー
+    ========================================= */
+    .menu-top {
+        width: 100%;
+        height: auto;
+        margin-top: 70px;
+        text-align: center;
+        color: #FFFFFF;
+        background-color: #000000;
+        .menu {
+            &__title {
+                text-align: center;
+                @include georgia(Bold);
+                font-size: 45px;
+                font-style: italic;
+                text-shadow: 3px 0 0 #b38e08,
+                             0 3px 0 #b38e08,
+                             -3px 0 0 #b38e08,
+                             0 -3px 0 #b38e08,
+                             5px 3px 2px #FFFFFF;
+                margin-bottom: 98px;
+            }
+            &__inner {
+                display: flex;
+                justify-content: space-around;
+                margin-bottom: 115px;
+                .menu__cut {
+                    text-align: center;
+                    width: 25%;
+                }
+                .menu__color {
+                    @extend .menu__cut;
+                }
+                .menu__perm {
+                    @extend .menu__cut;
+                }
+                .menu__category {
+                    @include georgia(Bold);
+                    font-size: 35px;
+                    margin-bottom: 67px;
+                    text-shadow: 3px 0 0 #b38e08,
+                                 0 3px 0 #b38e08,
+                                 -3px 0 0 #b38e08,
+                                 0 -3px 0 #b38e08,
+                                 5px 3px 2px #FFFFFF;
+                }
+                .menu__wrapper {
+                    @include yumincho(900);
+                    font-size: 20px;
+                    display: flex;
+                    justify-content: space-between;
+                    .menu {
+                        &__term {
+                            margin-bottom: 43px;
+                            text-shadow: 1px 0 0 #b38e08,
+                                     0 1px 0 #b38e08,
+                                     -1px 0 0 #b38e08,
+                                     0 -1px 0 #b38e08,
+                                     5px 3px 2px #FFFFFF;
+                        }
+                        &__description {
+                            text-shadow: 1px 0 0 #b38e08,
+                                         0 1px 0 #b38e08,
+                                         -1px 0 0 #b38e08,
+                                         0 -1px 0 #b38e08,
+                                         5px 3px 2px #FFFFFF;
+                        }
+                    }
+                    &:last-of-type {
+                        .menu__term {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+            }
+            &__btn--view {
+                @include view;
+                @include georgia(Bold);
+                font-size: 22px;
+                &:hover {
+                    filter: brightness(75%);
+                }
+            }
+        }
+        @media (max-width: 1400px) {
+            .menu {
+                &__inner {
+                    .menu__category {
+                        font-size: 30px;
+                    }
+                    .menu__wrapper {
+                        font-size: 18px;
+                    }
+                }
+                &__btn--view {
+                    font-size: 20px;
+                }
+            }
+        }
+        @media (min-width: 768px) and (max-width: 1199px) {
+            margin-top: 40px;
+            .menu {
+                &__inner {
+                    flex-direction: column;
+                    margin-bottom: 100px;
+                    .menu__cut {
+                        text-align: center;
+                        width: 100%;
+                        .menu__list {
+                            margin-bottom: 100px;
+                            .menu__wrapper {
+                                justify-content: space-evenly;
+                            }
+                        }
+                    }
+                    .menu__perm {
+                        .menu__list {
+                            margin-bottom: 0;
+                        }
+                    }
+                }        
+            }
+        }
+        @media (max-width: 767px) {
+            margin-top: 40px;
+            .menu {
+                &__title {
+                    font-size: 25px;
+                    margin-bottom: 55px;
+                }
+                &__inner {
+                    flex-direction: column;
+                    .menu__cut {
+                        text-align: center;
+                        width: 100%;
+                    }
+                    .menu__perm {
+                        .menu__list {
+                            margin-bottom: 0;
+                        }
+                    }
+                    .menu__category {
+                       
+                        font-size: 20px;
+                        margin-bottom: 35px;
+                    }
+                    .menu__list {
+                        margin-bottom: 100px;
+                        .menu__wrapper {
+                            
+                            font-size: 14px;
+                            justify-content: space-evenly;
+                           
+                            &:last-of-type {
+                                .menu__term {
+                                    margin-bottom: 0;
+                                }
+                            }
+                        }
+                    } 
+                }
+                &__btn--view {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+    /* ========================================
+                    ヘアーカタログ
+    ========================================= */
+    .hair-top {
+        width: 100%;
+        height: auto;
+        text-align: center;
+        margin-top: 70px;
+        .hair {
+            &__title {
+                @include georgia(Bold);
+                font-size: 45px;
+                font-style: italic;
+                margin-bottom: 27px;
+            }
+            &__pict {
+                display: flex;
+                max-width: 1180px;
+                justify-content: space-between;
+                margin: 0 auto;
+                margin-bottom: 32px;
+                .hair__thumb {
+                    width: 43%;
+                    .hair {
+                        &__img {
+                            width: 100%;
+                        }
+                        &__intro {
+                            margin-top: 21px;
+                            .hair {
+                                &__name {
+                                    @include yumincho(900);
+                                    font-size: 20px;
+                                    margin-bottom: 10px;
+                                }
+                                &__stylist {
+                                    @include yumincho(400);
+                                    font-size: 18px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &__btn--view {
+                @include view;
+                @include georgia(Bold);
+                font-size: 22px;
+                &:hover {
+                    filter: brightness(75%);
+                }
+            }
+        }
+        @media (max-width:767px) {
+            margin-top: 40px;
+            .hair {
+                &__title {
+                    font-size: 25px;
+                    margin-bottom: 15px;
+                }
+                &__pict {
+                    flex-direction: column;
+                    margin-bottom: 0;
+                    
+                    .hair__thumb {
+                        width: 100%;
+                        .hair {
+                            
+                            &__intro {
+                                margin: 10px 0 60px 0;
+                            }
+                        }
+                    }
+                }
+                &__btn--view {
+                    
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+    /* ========================================
+                        ブログ
+    ========================================= */
+    .blog-top {
+        width: 100%;
+        height: 400px;
+        margin-top: 70px;
+        background-image: url(../img/top_blog_bg.jpg);
+        background-image: image-set(url(../img/top_blog_bg.jpg) 1x, url(../img/top_blog_bg@2x.jpg) 2x, url(../img/top_blog_bg@3x.jpg) 3x);
+        text-align: center;
+        .blog__title {
+            @include georgia(Bold);
+            font-size: 45px;
+            font-style: italic;
+            margin-bottom: 300px;
+        }
+        .blog__btn--view {
+            @include view;
+            @include georgia(Bold);
+            font-size: 22px;
+            &:hover {
+                filter: brightness(75%);
+            }
+        }
+        @media (max-width:767px) {
+            margin-top: 40px;
+            .blog__title {
+                font-size: 25px;    
+            }
+            .blog__btn--view {
+                font-size: 16px;
+            }    
+        }
+    }
+    /* ========================================
+                        求人
+    ========================================= */
+    .recruit-top {
+        width: 100%;
+        height: 643px;
+        position: relative;
+        text-align: center;
+        color: #FFFFFF;
+        margin-top: 70px;
+        background-image: url(../img/top_recruit_bg.jpg);
+        background-image: image-set(url(../img/top_recruit_bg.jpg) 1x, url(../img/top_recruit_bg@2x.jpg) 2x, url(../img/top_recruit_bg@3x.jpg) 3x);
+        .recruit {
+            &__title {
+                @include georgia(Bold);
+                font-size: 45px;
+                font-style: italic;
+                text-shadow: 3px 0 0 #b38e08,
+                             0 3px 0 #b38e08,
+                             -3px 0 0 #b38e08,
+                             0 -3px 0 #b38e08,
+                             5px 5px 3px #FFFFFF;
+            }
+            &__text {
+                @include yumincho(400);
+                font-size: 18px;
+                width: 35%;
+                margin-left: 55%;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                text-shadow: 1px 0 0 #b38e08,
+                             0 1px 0 #b38e08,
+                             -1px 0 0 #b38e08,
+                             0 -1px 0 #b38e08,
+                             3px 2px 2px #FFFFFF;
+            }    
+        }
+        @media (max-width: 767px) {
+            height: 250px;
+            overflow: hidden;
+            margin-top: 40px;
+            background-image: url(../img/top_recruit_bg-sp.jpg);
+            background-image: image-set(url(../img/top_recruit_bg-sp.jpg) 1x, url(../img/top_recruit_bg-sp@2x.jpg) 2x, url(../img/top_recruit_bg-sp@3x.jpg) 3x);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: left 50%;
+            .recruit {
+                &__title {
+                    font-size: 25px;
+                }
+                &__text {
+                    @include yumincho(400);
+                    font-size: 14px;
+                }    
+            }
+        } 
+    }
+    /* ========================================
+                    アクセス
+    ========================================= */
+    .access-top {
+        width: 100%;
+        height: auto;
+        text-align: center;
+        padding-bottom: 31px;
+        margin-top: 70px;
+
+        background-image: url(../img/top_access_bg.jpg);
+        background-image: image-set(url(../img/top_access_bg.jpg) 1x, url(../img/top_access_bg@2x.jpg) 2x, url(../img/top_access_bg@3x.jpg) 3x);
+        .access {
+            &__title {
+                @include georgia(Bold);
+                font-size: 45px;
+                font-style: italic;
+                margin-bottom: 61px;
+            }
+            &__wrapper {
+                max-width: 1180px;
+                display: flex;
+                margin: 0 auto;
+                .slider2 {
+                    width: 60%;
+                    margin: 0;
+                    margin-right: 7%;
+                    max-width: 666px;
+                    .access {
+                        &__pict-1 {
+                            width: 100%;
+                            max-width: 666px;
+                            .access__img {
+                                width: 100%;
+                                height: auto;
+                            }
+                        }
+                        &__pict-2 {
+                            @extend .access__pict-1;
+                        }
+                        &__pict-3 {
+                            @extend .access__pict-1;
+                        }
+                    }
+                }
+                .access__table {
+                    width: 48%;
+                    margin-top: 20px;
+                    .access__line {
+                        @include yumincho(400);
+                        font-size: 18px;
+                        width: 100%;
+                        .access {
+                            &__category {
+                                @include georgia(100);
+                                width: 50%;
+                            }
+                            &__tel,&__address,&__time,&__holiday,&__price {
+                                width: 100%;
+                            }
+                            &__place {
+                                @extend .access__tel;
+                                font-size: 16px;
+                            }
+                        }
+                    }
+                }
+            }
+            &__btn--view {
+                @include view;
+                @include georgia(Bold);
+                font-size: 22px;
+                margin: 32px 0 40px 40%;
+                &:hover {
+                    filter: brightness(75%);
+                }
+            }
+            &__thumb {
+                width: 100%;
+                height: auto;
+                .access__img {
+                    width: 100%;
+                }
+            }
+        }
+        @media (max-width: 1199px) {
+            overflow: hidden;
+            margin-top: 40px;
+            .access {
+                &__wrapper {
+                    .slider2 {
+                        margin-right: 3%;
+                    }
+                    .access__table {
+                        .access__line {
+                            font-size: 14px;
+                            .access {
+                                &__place {
+                                    font-size: 13px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        @media (max-width: 767px) {
+            .access {
+                &__title {
+                    font-size: 25px;
+                    margin-bottom: 32px;
+                }
+                &__wrapper {
+                    flex-direction: column;
+                    .slider2 {
+                        width: 100%;
+                        margin: 0;
+                        max-width: none;
+                        .access {
+                            &__pict-1 {
+                                width: 100%;
+                                max-width: none;   
+                            }   
+                        }
+                    }
+                    .access__table {
+                        width: 95%;
+                        margin: 50px auto 0 auto;
+                        .access__line {
+                            height: 45px;   
+                        }
+                    }
+                }
+                &__btn--view {
+                   
+                    font-size: 16px;
+                    margin: 32px 0 40px 0;   
+                }
+            }
+        }
+    }
+}
+/* ========================================
+                フッター
+========================================= */
+.footer-top {
+    @include footer;
+    @media (max-width: 767px) {
+        .footer {
+            &__inner {
+                .footer__text {
+                font-size: 18px; 
+                }
+                .footer__wrapper {
+                    flex-direction: column;
+                    .footer {
+                        &__tel {
+                            font-size: 18px;
+                            order: 1;
+                        }
+                        &__logo {
+                            width: 80px;
+                            height: auto;
+                            margin: 10px 0;
+                            order: 3;
+                            .footer__img {
+                                width: 100%;
+                            }
+                        }
+                        &__btn--pagenav {
+                            margin-top: 34px;
+                            font-size: 16px;
+                            order: 2;
+                        }
+                    }
+                }
+                .footer__table {
+                    width: 90%;
+                    .footer__line {
+                        height: 45px;
+                        .footer {
+                            &__category {
+                                font-size: 15px;
+                                text-align: center;
+                                padding: 0 10px;
+                            }
+                            &__address {
+                                font-size: 15px;
+                            }
+                        }
+                    }
+                }
+            }   
+        }
+    }
+}

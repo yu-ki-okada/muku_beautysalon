@@ -1,0 +1,1376 @@
+@charset "UTF-8";
+@-webkit-keyframes zoomUp {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(1.15);
+    transform: scale(1.15);
+  }
+}
+
+@keyframes zoomUp {
+  /* 1.15倍させる指定 */
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(1.15);
+    transform: scale(1.15);
+  }
+}
+
+/* ========================================
+            トップページ
+========================================= */
+/* ========================================
+                ヘッダー
+========================================= */
+.header-top, .header-top.scroll-nav {
+  font-family: "Georgia","Times","Times New Roman",serif;
+  font-weight: Bold;
+  width: 100%;
+  height: 140px;
+  font-size: 20px;
+  background-color: rgba(0, 0, 0, 0);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  position: fixed;
+  z-index: 20;
+}
+
+.header-top .header__logo {
+  width: 70px;
+  height: auto;
+  margin: 20px 50px 0 20px;
+}
+
+.header-top .header__inner {
+  margin-top: 37px;
+  text-shadow: 1px 0 0 #dbba03, 0 1px 0 #dbba03, -1px 0 0 #dbba03, 0 -1px 0 #dbba03;
+}
+
+.header-top .header__inner .global-nav__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.header-top .header__inner .global-nav__list .global-nav__item {
+  margin-right: 50px;
+}
+
+.header-top .header__btn--pagenav {
+  width: 240px;
+  height: 56px;
+  text-align: center;
+  background-color: #00ffff;
+  border-radius: 10px;
+  -webkit-box-shadow: 3px 3px 10px 0px rgba(255, 255, 255, 0.5) inset, -3px -5px 10px 0px rgba(0, 0, 0, 0.5) inset;
+          box-shadow: 3px 3px 10px 0px rgba(255, 255, 255, 0.5) inset, -3px -5px 10px 0px rgba(0, 0, 0, 0.5) inset;
+  margin: 23px 31px 0 0;
+}
+
+.header-top .header__btn--pagenav:hover {
+  -webkit-filter: brightness(85%);
+          filter: brightness(85%);
+}
+
+.header-top .btn__js {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  width: 48px;
+  height: 48px;
+  z-index: 20;
+  border: none;
+}
+
+.header-top .btn__js .btn__line {
+  display: block;
+  position: relative;
+  width: 70%;
+  height: 3px;
+  background-color: #267cfd;
+  -webkit-transition: .2s;
+  transition: .2s;
+  top: 0px;
+  right: -5px;
+}
+
+.header-top .btn__js .btn__line::before, .header-top .btn__js .btn__line::after {
+  content: "";
+  position: absolute;
+  right: 0.5px;
+  width: 100%;
+  height: 100%;
+  background-color: #267cfd;
+  -webkit-transition: .5s;
+  transition: .5s;
+  -webkit-transform: translateY(-16px);
+          transform: translateY(-16px);
+  margin-top: 3px;
+}
+
+.header-top .btn__js .btn__line::after {
+  -webkit-transform: translateY(16px);
+          transform: translateY(16px);
+  margin-top: -3px;
+}
+
+.header-top .btn__js .btn__line.open {
+  background-color: transparent;
+}
+
+.header-top .btn__js .btn__line.open::before, .header-top .btn__js .open.btn__line::after {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  margin-top: 0;
+  background-color: red;
+}
+
+.header-top .btn__js .btn__line.open::after {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  margin-top: 0;
+  background-color: red !important;
+}
+
+@media (min-width: 768px) {
+  .header-top .btn__js {
+    display: none;
+  }
+}
+
+@media (max-width: 1400px) {
+  .header-top .header__inner {
+    margin-top: 10px;
+  }
+  .header-top .header__inner .global-nav {
+    line-height: 3;
+  }
+  .header-top .header__btn--pagenav {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 868px) {
+  .header-top .header__inner {
+    margin-top: 25px;
+  }
+  .header-top .header__inner .global-nav {
+    line-height: 2;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 767px) {
+  .header-top, .header-top.scroll-nav {
+    height: 91px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .header-top .header__logo {
+    margin-top: 10px;
+  }
+  .header-top .header__logo .header__img {
+    width: 50px;
+  }
+  .header-top .header__inner .global-nav {
+    line-height: 4;
+    font-size: 16px;
+    padding-left: 30px;
+    position: fixed;
+    top: 135px;
+    right: -100%;
+    width: 100%;
+    height: 100%;
+    -webkit-transition: 0.7s;
+    transition: 0.7s;
+  }
+  .header-top .header__inner .global-nav.open {
+    right: 0px;
+    top: 0;
+    -webkit-transition: 0.7s;
+    transition: 0.7s;
+    padding-top: 135px;
+    background-color: rgba(183, 255, 255, 0.75);
+    font-size: 20px;
+  }
+  .header-top .header__inner .global-nav .global-nav__list {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .header-top .header__btn--pagenav {
+    width: 240px;
+    height: 56px;
+    text-align: center;
+    background-color: #00ffff;
+    border-radius: 10px;
+    -webkit-box-shadow: 3px 3px 10px 0px rgba(255, 255, 255, 0.5) inset, -3px -5px 10px 0px rgba(0, 0, 0, 0.5) inset;
+            box-shadow: 3px 3px 10px 0px rgba(255, 255, 255, 0.5) inset, -3px -5px 10px 0px rgba(0, 0, 0, 0.5) inset;
+    width: 40%;
+    height: 44px;
+    position: absolute;
+    margin: 0;
+    top: 21px;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+  }
+}
+
+.scroll-nav.header-top {
+  background-color: #FFFFFF;
+}
+
+/* ========================================
+            メインビジュアル
+========================================= */
+.main-top {
+  width: 100%;
+  /* ========================================
+                 ファーストビュー
+    ========================================= */
+  /* ========================================
+                    お店紹介
+    ========================================= */
+  /* ========================================
+                    オーナー挨拶
+    ========================================= */
+  /* ========================================
+                    お店について
+    ========================================= */
+  /* ========================================
+                    スタイリスト
+    ========================================= */
+  /* ========================================
+                    メニュー
+    ========================================= */
+  /* ========================================
+                    ヘアーカタログ
+    ========================================= */
+  /* ========================================
+                        ブログ
+    ========================================= */
+  /* ========================================
+                        求人
+    ========================================= */
+  /* ========================================
+                    アクセス
+    ========================================= */
+}
+
+.main-top .firstview-top {
+  width: 100%;
+  height: 800px;
+}
+
+.main-top .firstview-top .swiper-slide {
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  max-width: 100%;
+}
+
+.main-top .firstview-top .swiper-slide .slide-img {
+  width: 100%;
+  background-position: top center;
+  height: 800px;
+  /* 800pxの高さで表示させる */
+}
+
+.main-top .firstview-top .swiper-slide .slide-sp {
+  display: none;
+}
+
+.main-top .firstview-top .swiper-slide-active .slide-img {
+  -webkit-animation: zoomUp 12s linear 0s;
+          animation: zoomUp 12s linear 0s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+.main-top .firstview-top .swiper-slide-duplicate-active .slide-img {
+  -webkit-animation: zoomUp 12s linear 0s;
+          animation: zoomUp 12s linear 0s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+.main-top .firstview-top .swiper-slide-prev .slide-img {
+  -webkit-animation: zoomUp 12s linear 0s;
+          animation: zoomUp 12s linear 0s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+@media (max-width: 1199px) {
+  .main-top .firstview-top {
+    height: auto;
+  }
+  .main-top .firstview-top .swiper-slide .slide-img {
+    width: 100%;
+    height: 600px;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+@media (max-width: 600px) {
+  .main-top .firstview-top .slider1 {
+    width: 100%;
+  }
+  .main-top .firstview-top .slider1 .swiper-slide {
+    width: 100%;
+  }
+  .main-top .firstview-top .slider1 .swiper-slide .slide-img {
+    display: none;
+  }
+  .main-top .firstview-top .slider1 .swiper-slide .slide-sp {
+    display: block;
+    height: 445px;
+    background-size: cover;
+    background-position: left 40%;
+  }
+}
+
+.main-top .intro-top {
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 40px;
+}
+
+.main-top .intro-top .intro__thumb {
+  width: 50%;
+  max-width: 860px;
+  margin-right: 10%;
+}
+
+.main-top .intro-top .intro__thumb .intro__img {
+  width: 100%;
+}
+
+.main-top .intro-top .intro__wrapper {
+  font-size: 25px;
+  width: 35%;
+  font-family: "游明朝","Yu Mincho","YuMincho",serif;
+  font-weight: 400;
+}
+
+.main-top .intro-top .intro__wrapper .intro__title {
+  margin-bottom: 85px;
+}
+
+@media (max-width: 1200px) {
+  .main-top .intro-top .intro__wrapper {
+    font-size: 16px;
+  }
+  .main-top .intro-top .intro__wrapper .intro__title {
+    margin-bottom: 45px;
+  }
+}
+
+@media (max-width: 767px) {
+  .main-top .intro-top {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    position: relative;
+    text-align: center;
+  }
+  .main-top .intro-top .intro__thumb {
+    width: 100%;
+    max-width: 860px;
+    margin-right: 0;
+  }
+  .main-top .intro-top .intro__wrapper {
+    width: calc(100% - 10px);
+    margin: 0 auto;
+    text-shadow: 1px 0 0 #ffffff, 0 1px 0 #ffffff, -1px 0 0 #ffffff, 0 -1px 0 #ffffff;
+    position: absolute;
+    top: 10%;
+    left: 1%;
+  }
+  .main-top .intro-top .intro__wrapper .intro__title {
+    margin-bottom: 5%;
+  }
+}
+
+.main-top .greeting-top {
+  width: 100%;
+  height: auto;
+  background-image: url(../img/top_greeting_bg.jpg);
+  background-image: -webkit-image-set(url(../img/top_greeting_bg.jpg) 1x, url(../img/top_greeting_bg@2x.jpg) 2x, url(../img/top_greeting_bg@3x.jpg) 3x);
+  background-image: image-set(url(../img/top_greeting_bg.jpg) 1x, url(../img/top_greeting_bg@2x.jpg) 2x, url(../img/top_greeting_bg@3x.jpg) 3x);
+  margin-top: 70px;
+}
+
+.main-top .greeting-top .greeting__title {
+  font-family: "Georgia","Times","Times New Roman",serif;
+  font-weight: Bold;
+  font-size: 45px;
+  font-style: italic;
+  text-align: center;
+  margin-bottom: 71px;
+}
+
+.main-top .greeting-top .greeting__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  padding-left: 10%;
+  font-family: "游明朝","Yu Mincho","YuMincho",serif;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.main-top .greeting-top .greeting__wrapper .greeting__text {
+  width: 35%;
+  margin-right: 10%;
+}
+
+.main-top .greeting-top .greeting__wrapper .greeting__thumb {
+  width: 50%;
+  max-width: 556px;
+}
+
+.main-top .greeting-top .greeting__wrapper .greeting__thumb .greeting__img {
+  width: 100%;
+}
+
+@media (max-width: 767px) {
+  .main-top .greeting-top {
+    position: relative;
+    background-image: none;
+    margin-top: 40px;
+  }
+  .main-top .greeting-top .greeting__title {
+    font-size: 25px;
+    margin-bottom: 0px;
+    position: absolute;
+    z-index: 2;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+  }
+  .main-top .greeting-top .greeting__wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    position: relative;
+    padding-left: 0;
+    font-size: 14px;
+    text-align: center;
+  }
+  .main-top .greeting-top .greeting__wrapper .greeting__text {
+    width: 100%;
+    margin-right: 0;
+    position: absolute;
+    z-index: 2;
+    top: 55%;
+    text-shadow: 1px 0 0 #cfd6e5, 0 1px 0 #cfd6e5, -1px 0 0 #cfd6e5, 0 -1px 0 #cfd6e5;
+  }
+  .main-top .greeting-top .greeting__wrapper .greeting__thumb {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.main-top .about-top {
+  width: 100%;
+  height: auto;
+  margin-top: 70px;
+  padding: 0 5%;
+}
+
+.main-top .about-top .about__title {
+  font-family: "Georgia","Times","Times New Roman",serif;
+  font-weight: Bold;
+  font-size: 45px;
+  font-style: italic;
+  text-align: center;
+  margin-bottom: 91px;
+}
+
+.main-top .about-top .about__article {
+  width: 100%;
+  height: auto;
+  font-family: "游明朝","Yu Mincho","YuMincho",serif;
+  font-weight: 400;
+  font-size: 18px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 1180px;
+  margin: 0 auto;
+  margin-bottom: 120px;
+}
+
+.main-top .about-top .about__article .about__thumb {
+  width: 78%;
+  max-width: 617px;
+}
+
+.main-top .about-top .about__article .about__thumb .about__img {
+  width: 100%;
+}
+
+.main-top .about-top .about__article .about__text {
+  width: 40%;
+}
+
+.main-top .about-top .about__article:nth-of-type(2n-1) .about__text {
+  margin-left: 14%;
+}
+
+.main-top .about-top .about__article:nth-of-type(2n) .about__text {
+  margin-right: 9%;
+}
+
+.main-top .about-top .about__article:last-of-type {
+  margin-bottom: 0;
+}
+
+@media (max-width: 767px) {
+  .main-top .about-top {
+    margin-top: 40px;
+    padding: 0;
+  }
+  .main-top .about-top .about__title {
+    font-size: 25px;
+    margin-bottom: 0;
+  }
+  .main-top .about-top .about__article {
+    position: relative;
+    font-size: 14px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: 0;
+  }
+  .main-top .about-top .about__article .about__thumb {
+    width: 100%;
+    max-width: none;
+  }
+  .main-top .about-top .about__article .about__thumb .about__img {
+    width: 100%;
+  }
+  .main-top .about-top .about__article .about__text {
+    width: 100%;
+    bottom: 20%;
+    color: #067e28;
+    text-shadow: 1px 0 0 #f3f4f6, 0 1px 0 #f3f4f6, -1px 0 0 #f3f4f6, 0 -1px 0 #f3f4f6;
+  }
+  .main-top .about-top .about__article:nth-of-type(2n-1) .about__text {
+    margin-left: 0;
+    position: absolute;
+    text-align: center;
+  }
+  .main-top .about-top .about__article:nth-of-type(2n) .about__text {
+    margin-right: 0;
+    position: absolute;
+    text-align: center;
+    z-index: 2;
+  }
+  .main-top .about-top .about__article:last-of-type {
+    margin-bottom: 0;
+  }
+  .main-top .about-top .about__article:last-of-type .about__text {
+    position: absolute;
+    text-align: center;
+  }
+}
+
+.main-top .stylist-top {
+  width: 100%;
+  height: auto;
+  margin-top: 70px;
+  background-image: url(../img/top_stylist_bg.jpg);
+  background-image: -webkit-image-set(url(../img/top_stylist_bg.jpg) 1x, url(../img/top_stylist_bg@2x.jpg) 2x, url(../img/top_stylist_bg@3x.jpg) 3x);
+  background-image: image-set(url(../img/top_stylist_bg.jpg) 1x, url(../img/top_stylist_bg@2x.jpg) 2x, url(../img/top_stylist_bg@3x.jpg) 3x);
+  text-align: center;
+}
+
+.main-top .stylist-top .stylist__title {
+  font-family: "Georgia","Times","Times New Roman",serif;
+  font-weight: Bold;
+  font-size: 45px;
+  font-style: italic;
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+.main-top .stylist-top .stylist__wrapper {
+  width: 100%;
+  max-width: 1180px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 auto;
+  font-family: "游明朝","Yu Mincho","YuMincho",serif;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.main-top .stylist-top .stylist__wrapper .stylist__thumb {
+  width: 50%;
+}
+
+.main-top .stylist-top .stylist__wrapper .stylist__thumb .stylist__img {
+  width: 100%;
+}
+
+.main-top .stylist-top .stylist__wrapper .stylist__text {
+  width: 40%;
+}
+
+.main-top .stylist-top .stylist__btn--view {
+  width: 227px;
+  height: 44px;
+  text-align: center;
+  background-color: #908a32;
+  color: #FFFFFF;
+  border-radius: 10px;
+  -webkit-box-shadow: 3px 5px 10px 0px white inset, -3px -5px 10px 0px rgba(0, 0, 0, 0.9) inset;
+          box-shadow: 3px 5px 10px 0px white inset, -3px -5px 10px 0px rgba(0, 0, 0, 0.9) inset;
+  font-family: "Georgia","Times","Times New Roman",serif;
+  font-weight: Bold;
+  font-size: 22px;
+  margin-top: -40px;
+}
+
+.main-top .stylist-top .stylist__btn--view:hover {
+  -webkit-filter: brightness(75%);
+          filter: brightness(75%);
+}
+
+@media (max-width: 767px) {
+  .main-top .stylist-top {
+    margin-top: 40px;
+  }
+  .main-top .stylist-top .stylist__title {
+    font-size: 25px;
+    margin-bottom: 15px;
+  }
+  .main-top .stylist-top .stylist__wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    font-size: 14px;
+  }
+  .main-top .stylist-top .stylist__wrapper .stylist__thumb {
+    width: 100%;
+    padding-left: 60px;
+    margin-top: 10px;
+  }
+  .main-top .stylist-top .stylist__wrapper .stylist__text {
+    width: 70%;
+  }
+  .main-top .stylist-top .stylist__btn--view {
+    font-size: 16px;
+    margin-top: 0px;
+  }
+}
+
+.main-top .menu-top {
+  width: 100%;
+  height: auto;
+  margin-top: 70px;
+  text-align: center;
+  color: #FFFFFF;
+  background-color: #000000;
+}
+
+.main-top .menu-top .menu__title {
+  text-align: center;
+  font-family: "Georgia","Times","Times New Roman",serif;
+  font-weight: Bold;
+  font-size: 45px;
+  font-style: italic;
+  text-shadow: 3px 0 0 #b38e08, 0 3px 0 #b38e08, -3px 0 0 #b38e08, 0 -3px 0 #b38e08, 5px 3px 2px #FFFFFF;
+  margin-bottom: 98px;
+}
+
+.main-top .menu-top .menu__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-bottom: 115px;
+}
+
+.main-top .menu-top .menu__inner .menu__cut, .main-top .menu-top .menu__inner .menu__color, .main-top .menu-top .menu__inner .menu__perm {
+  text-align: center;
+  width: 25%;
+}
+
+.main-top .menu-top .menu__inner .menu__category {
+  font-family: "Georgia","Times","Times New Roman",serif;
+  font-weight: Bold;
+  font-size: 35px;
+  margin-bottom: 67px;
+  text-shadow: 3px 0 0 #b38e08, 0 3px 0 #b38e08, -3px 0 0 #b38e08, 0 -3px 0 #b38e08, 5px 3px 2px #FFFFFF;
+}
+
+.main-top .menu-top .menu__inner .menu__wrapper {
+  font-family: "游明朝","Yu Mincho","YuMincho",serif;
+  font-weight: 900;
+  font-size: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.main-top .menu-top .menu__inner .menu__wrapper .menu__term {
+  margin-bottom: 43px;
+  text-shadow: 1px 0 0 #b38e08, 0 1px 0 #b38e08, -1px 0 0 #b38e08, 0 -1px 0 #b38e08, 5px 3px 2px #FFFFFF;
+}
+
+.main-top .menu-top .menu__inner .menu__wrapper .menu__description {
+  text-shadow: 1px 0 0 #b38e08, 0 1px 0 #b38e08, -1px 0 0 #b38e08, 0 -1px 0 #b38e08, 5px 3px 2px #FFFFFF;
+}
+
+.main-top .menu-top .menu__inner .menu__wrapper:last-of-type .menu__term {
+  margin-bottom: 0;
+}
+
+.main-top .menu-top .menu__btn--view {
+  width: 227px;
+  height: 44px;
+  text-align: center;
+  background-color: #908a32;
+  color: #FFFFFF;
+  border-radius: 10px;
+  -webkit-box-shadow: 3px 5px 10px 0px white inset, -3px -5px 10px 0px rgba(0, 0, 0, 0.9) inset;
+          box-shadow: 3px 5px 10px 0px white inset, -3px -5px 10px 0px rgba(0, 0, 0, 0.9) inset;
+  font-family: "Georgia","Times","Times New Roman",serif;
+  font-weight: Bold;
+  font-size: 22px;
+}
+
+.main-top .menu-top .menu__btn--view:hover {
+  -webkit-filter: brightness(75%);
+          filter: brightness(75%);
+}
+
+@media (max-width: 1400px) {
+  .main-top .menu-top .menu__inner .menu__category {
+    font-size: 30px;
+  }
+  .main-top .menu-top .menu__inner .menu__wrapper {
+    font-size: 18px;
+  }
+  .main-top .menu-top .menu__btn--view {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .main-top .menu-top {
+    margin-top: 40px;
+  }
+  .main-top .menu-top .menu__inner {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-bottom: 100px;
+  }
+  .main-top .menu-top .menu__inner .menu__cut, .main-top .menu-top .menu__inner .menu__color, .main-top .menu-top .menu__inner .menu__perm {
+    text-align: center;
+    width: 100%;
+  }
+  .main-top .menu-top .menu__inner .menu__cut .menu__list, .main-top .menu-top .menu__inner .menu__color .menu__list, .main-top .menu-top .menu__inner .menu__perm .menu__list {
+    margin-bottom: 100px;
+  }
+  .main-top .menu-top .menu__inner .menu__cut .menu__list .menu__wrapper, .main-top .menu-top .menu__inner .menu__color .menu__list .menu__wrapper, .main-top .menu-top .menu__inner .menu__perm .menu__list .menu__wrapper {
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  .main-top .menu-top .menu__inner .menu__perm .menu__list {
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .main-top .menu-top {
+    margin-top: 40px;
+  }
+  .main-top .menu-top .menu__title {
+    font-size: 25px;
+    margin-bottom: 55px;
+  }
+  .main-top .menu-top .menu__inner {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .main-top .menu-top .menu__inner .menu__cut, .main-top .menu-top .menu__inner .menu__color, .main-top .menu-top .menu__inner .menu__perm {
+    text-align: center;
+    width: 100%;
+  }
+  .main-top .menu-top .menu__inner .menu__perm .menu__list {
+    margin-bottom: 0;
+  }
+  .main-top .menu-top .menu__inner .menu__category {
+    font-size: 20px;
+    margin-bottom: 35px;
+  }
+  .main-top .menu-top .menu__inner .menu__list {
+    margin-bottom: 100px;
+  }
+  .main-top .menu-top .menu__inner .menu__list .menu__wrapper {
+    font-size: 14px;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  .main-top .menu-top .menu__inner .menu__list .menu__wrapper:last-of-type .menu__term {
+    margin-bottom: 0;
+  }
+  .main-top .menu-top .menu__btn--view {
+    font-size: 16px;
+  }
+}
+
+.main-top .hair-top {
+  width: 100%;
+  height: auto;
+  text-align: center;
+  margin-top: 70px;
+}
+
+.main-top .hair-top .hair__title {
+  font-family: "Georgia","Times","Times New Roman",serif;
+  font-weight: Bold;
+  font-size: 45px;
+  font-style: italic;
+  margin-bottom: 27px;
+}
+
+.main-top .hair-top .hair__pict {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 1180px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0 auto;
+  margin-bottom: 32px;
+}
+
+.main-top .hair-top .hair__pict .hair__thumb {
+  width: 43%;
+}
+
+.main-top .hair-top .hair__pict .hair__thumb .hair__img {
+  width: 100%;
+}
+
+.main-top .hair-top .hair__pict .hair__thumb .hair__intro {
+  margin-top: 21px;
+}
+
+.main-top .hair-top .hair__pict .hair__thumb .hair__intro .hair__name {
+  font-family: "游明朝","Yu Mincho","YuMincho",serif;
+  font-weight: 900;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.main-top .hair-top .hair__pict .hair__thumb .hair__intro .hair__stylist {
+  font-family: "游明朝","Yu Mincho","YuMincho",serif;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.main-top .hair-top .hair__btn--view {
+  width: 227px;
+  height: 44px;
+  text-align: center;
+  background-color: #908a32;
+  color: #FFFFFF;
+  border-radius: 10px;
+  -webkit-box-shadow: 3px 5px 10px 0px white inset, -3px -5px 10px 0px rgba(0, 0, 0, 0.9) inset;
+          box-shadow: 3px 5px 10px 0px white inset, -3px -5px 10px 0px rgba(0, 0, 0, 0.9) inset;
+  font-family: "Georgia","Times","Times New Roman",serif;
+  font-weight: Bold;
+  font-size: 22px;
+}
+
+.main-top .hair-top .hair__btn--view:hover {
+  -webkit-filter: brightness(75%);
+          filter: brightness(75%);
+}
+
+@media (max-width: 767px) {
+  .main-top .hair-top {
+    margin-top: 40px;
+  }
+  .main-top .hair-top .hair__title {
+    font-size: 25px;
+    margin-bottom: 15px;
+  }
+  .main-top .hair-top .hair__pict {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-bottom: 0;
+  }
+  .main-top .hair-top .hair__pict .hair__thumb {
+    width: 100%;
+  }
+  .main-top .hair-top .hair__pict .hair__thumb .hair__intro {
+    margin: 10px 0 60px 0;
+  }
+  .main-top .hair-top .hair__btn--view {
+    font-size: 16px;
+  }
+}
+
+.main-top .blog-top {
+  width: 100%;
+  height: 400px;
+  margin-top: 70px;
+  background-image: url(../img/top_blog_bg.jpg);
+  background-image: -webkit-image-set(url(../img/top_blog_bg.jpg) 1x, url(../img/top_blog_bg@2x.jpg) 2x, url(../img/top_blog_bg@3x.jpg) 3x);
+  background-image: image-set(url(../img/top_blog_bg.jpg) 1x, url(../img/top_blog_bg@2x.jpg) 2x, url(../img/top_blog_bg@3x.jpg) 3x);
+  text-align: center;
+}
+
+.main-top .blog-top .blog__title {
+  font-family: "Georgia","Times","Times New Roman",serif;
+  font-weight: Bold;
+  font-size: 45px;
+  font-style: italic;
+  margin-bottom: 300px;
+}
+
+.main-top .blog-top .blog__btn--view {
+  width: 227px;
+  height: 44px;
+  text-align: center;
+  background-color: #908a32;
+  color: #FFFFFF;
+  border-radius: 10px;
+  -webkit-box-shadow: 3px 5px 10px 0px white inset, -3px -5px 10px 0px rgba(0, 0, 0, 0.9) inset;
+          box-shadow: 3px 5px 10px 0px white inset, -3px -5px 10px 0px rgba(0, 0, 0, 0.9) inset;
+  font-family: "Georgia","Times","Times New Roman",serif;
+  font-weight: Bold;
+  font-size: 22px;
+}
+
+.main-top .blog-top .blog__btn--view:hover {
+  -webkit-filter: brightness(75%);
+          filter: brightness(75%);
+}
+
+@media (max-width: 767px) {
+  .main-top .blog-top {
+    margin-top: 40px;
+  }
+  .main-top .blog-top .blog__title {
+    font-size: 25px;
+  }
+  .main-top .blog-top .blog__btn--view {
+    font-size: 16px;
+  }
+}
+
+.main-top .recruit-top {
+  width: 100%;
+  height: 643px;
+  position: relative;
+  text-align: center;
+  color: #FFFFFF;
+  margin-top: 70px;
+  background-image: url(../img/top_recruit_bg.jpg);
+  background-image: -webkit-image-set(url(../img/top_recruit_bg.jpg) 1x, url(../img/top_recruit_bg@2x.jpg) 2x, url(../img/top_recruit_bg@3x.jpg) 3x);
+  background-image: image-set(url(../img/top_recruit_bg.jpg) 1x, url(../img/top_recruit_bg@2x.jpg) 2x, url(../img/top_recruit_bg@3x.jpg) 3x);
+}
+
+.main-top .recruit-top .recruit__title {
+  font-family: "Georgia","Times","Times New Roman",serif;
+  font-weight: Bold;
+  font-size: 45px;
+  font-style: italic;
+  text-shadow: 3px 0 0 #b38e08, 0 3px 0 #b38e08, -3px 0 0 #b38e08, 0 -3px 0 #b38e08, 5px 5px 3px #FFFFFF;
+}
+
+.main-top .recruit-top .recruit__text {
+  font-family: "游明朝","Yu Mincho","YuMincho",serif;
+  font-weight: 400;
+  font-size: 18px;
+  width: 35%;
+  margin-left: 55%;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  text-shadow: 1px 0 0 #b38e08, 0 1px 0 #b38e08, -1px 0 0 #b38e08, 0 -1px 0 #b38e08, 3px 2px 2px #FFFFFF;
+}
+
+@media (max-width: 767px) {
+  .main-top .recruit-top {
+    height: 250px;
+    overflow: hidden;
+    margin-top: 40px;
+    background-image: url(../img/top_recruit_bg-sp.jpg);
+    background-image: -webkit-image-set(url(../img/top_recruit_bg-sp.jpg) 1x, url(../img/top_recruit_bg-sp@2x.jpg) 2x, url(../img/top_recruit_bg-sp@3x.jpg) 3x);
+    background-image: image-set(url(../img/top_recruit_bg-sp.jpg) 1x, url(../img/top_recruit_bg-sp@2x.jpg) 2x, url(../img/top_recruit_bg-sp@3x.jpg) 3x);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left 50%;
+  }
+  .main-top .recruit-top .recruit__title {
+    font-size: 25px;
+  }
+  .main-top .recruit-top .recruit__text {
+    font-family: "游明朝","Yu Mincho","YuMincho",serif;
+    font-weight: 400;
+    font-size: 14px;
+  }
+}
+
+.main-top .access-top {
+  width: 100%;
+  height: auto;
+  text-align: center;
+  padding-bottom: 31px;
+  margin-top: 70px;
+  background-image: url(../img/top_access_bg.jpg);
+  background-image: -webkit-image-set(url(../img/top_access_bg.jpg) 1x, url(../img/top_access_bg@2x.jpg) 2x, url(../img/top_access_bg@3x.jpg) 3x);
+  background-image: image-set(url(../img/top_access_bg.jpg) 1x, url(../img/top_access_bg@2x.jpg) 2x, url(../img/top_access_bg@3x.jpg) 3x);
+}
+
+.main-top .access-top .access__title {
+  font-family: "Georgia","Times","Times New Roman",serif;
+  font-weight: Bold;
+  font-size: 45px;
+  font-style: italic;
+  margin-bottom: 61px;
+}
+
+.main-top .access-top .access__wrapper {
+  max-width: 1180px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 auto;
+}
+
+.main-top .access-top .access__wrapper .slider2 {
+  width: 60%;
+  margin: 0;
+  margin-right: 7%;
+  max-width: 666px;
+}
+
+.main-top .access-top .access__wrapper .slider2 .access__pict-1, .main-top .access-top .access__wrapper .slider2 .access__pict-2, .main-top .access-top .access__wrapper .slider2 .access__pict-3 {
+  width: 100%;
+  max-width: 666px;
+}
+
+.main-top .access-top .access__wrapper .slider2 .access__pict-1 .access__img, .main-top .access-top .access__wrapper .slider2 .access__pict-2 .access__img, .main-top .access-top .access__wrapper .slider2 .access__pict-3 .access__img {
+  width: 100%;
+  height: auto;
+}
+
+.main-top .access-top .access__wrapper .access__table {
+  width: 48%;
+  margin-top: 20px;
+}
+
+.main-top .access-top .access__wrapper .access__table .access__line {
+  font-family: "游明朝","Yu Mincho","YuMincho",serif;
+  font-weight: 400;
+  font-size: 18px;
+  width: 100%;
+}
+
+.main-top .access-top .access__wrapper .access__table .access__line .access__category {
+  font-family: "Georgia","Times","Times New Roman",serif;
+  font-weight: 100;
+  width: 50%;
+}
+
+.main-top .access-top .access__wrapper .access__table .access__line .access__tel, .main-top .access-top .access__wrapper .access__table .access__line .access__place, .main-top .access-top .access__wrapper .access__table .access__line .access__address, .main-top .access-top .access__wrapper .access__table .access__line .access__time, .main-top .access-top .access__wrapper .access__table .access__line .access__holiday, .main-top .access-top .access__wrapper .access__table .access__line .access__price {
+  width: 100%;
+}
+
+.main-top .access-top .access__wrapper .access__table .access__line .access__place {
+  font-size: 16px;
+}
+
+.main-top .access-top .access__btn--view {
+  width: 227px;
+  height: 44px;
+  text-align: center;
+  background-color: #908a32;
+  color: #FFFFFF;
+  border-radius: 10px;
+  -webkit-box-shadow: 3px 5px 10px 0px white inset, -3px -5px 10px 0px rgba(0, 0, 0, 0.9) inset;
+          box-shadow: 3px 5px 10px 0px white inset, -3px -5px 10px 0px rgba(0, 0, 0, 0.9) inset;
+  font-family: "Georgia","Times","Times New Roman",serif;
+  font-weight: Bold;
+  font-size: 22px;
+  margin: 32px 0 40px 40%;
+}
+
+.main-top .access-top .access__btn--view:hover {
+  -webkit-filter: brightness(75%);
+          filter: brightness(75%);
+}
+
+.main-top .access-top .access__thumb {
+  width: 100%;
+  height: auto;
+}
+
+.main-top .access-top .access__thumb .access__img {
+  width: 100%;
+}
+
+@media (max-width: 1199px) {
+  .main-top .access-top {
+    overflow: hidden;
+    margin-top: 40px;
+  }
+  .main-top .access-top .access__wrapper .slider2 {
+    margin-right: 3%;
+  }
+  .main-top .access-top .access__wrapper .access__table .access__line {
+    font-size: 14px;
+  }
+  .main-top .access-top .access__wrapper .access__table .access__line .access__place {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 767px) {
+  .main-top .access-top .access__title {
+    font-size: 25px;
+    margin-bottom: 32px;
+  }
+  .main-top .access-top .access__wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .main-top .access-top .access__wrapper .slider2 {
+    width: 100%;
+    margin: 0;
+    max-width: none;
+  }
+  .main-top .access-top .access__wrapper .slider2 .access__pict-1, .main-top .access-top .access__wrapper .slider2 .access__pict-2, .main-top .access-top .access__wrapper .slider2 .access__pict-3 {
+    width: 100%;
+    max-width: none;
+  }
+  .main-top .access-top .access__wrapper .access__table {
+    width: 95%;
+    margin: 50px auto 0 auto;
+  }
+  .main-top .access-top .access__wrapper .access__table .access__line {
+    height: 45px;
+  }
+  .main-top .access-top .access__btn--view {
+    font-size: 16px;
+    margin: 32px 0 40px 0;
+  }
+}
+
+/* ========================================
+                フッター
+========================================= */
+.footer-top {
+  width: 100%;
+  height: auto;
+  text-align: center;
+  padding-top: 42px;
+  background-image: url(../img/top_footer_pattern.jpg);
+  background-image: -webkit-image-set(url(../img/top_footer_pattern.jpg) 1x, url(../img/top_footer_pattern@2x.jpg) 2x, url(../img/top_footer_pattern@3x.jpg) 3x);
+  background-image: image-set(url(../img/top_footer_pattern.jpg) 1x, url(../img/top_footer_pattern@2x.jpg) 2x, url(../img/top_footer_pattern@3x.jpg) 3x);
+}
+
+.footer-top .footer__inner {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.footer-top .footer__inner .footer__text {
+  font-size: 20px;
+  font-family: "游明朝","Yu Mincho","YuMincho",serif;
+  font-weight: 900;
+}
+
+.footer-top .footer__inner .footer__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 20px 0;
+}
+
+.footer-top .footer__inner .footer__wrapper .footer__tel {
+  font-size: 25px;
+  font-family: "游明朝","Yu Mincho","YuMincho",serif;
+  font-weight: 900;
+}
+
+.footer-top .footer__inner .footer__wrapper .footer__logo {
+  width: 130px;
+  height: 185px;
+  margin: 0 10%;
+}
+
+.footer-top .footer__inner .footer__wrapper .footer__btn--pagenav {
+  width: 240px;
+  height: 56px;
+  text-align: center;
+  background-color: #00ffff;
+  border-radius: 10px;
+  -webkit-box-shadow: 3px 3px 10px 0px rgba(255, 255, 255, 0.5) inset, -3px -5px 10px 0px rgba(0, 0, 0, 0.5) inset;
+          box-shadow: 3px 3px 10px 0px rgba(255, 255, 255, 0.5) inset, -3px -5px 10px 0px rgba(0, 0, 0, 0.5) inset;
+  font-family: "Georgia","Times","Times New Roman",serif;
+  font-weight: Bold;
+  font-size: 20px;
+}
+
+.footer-top .footer__inner .footer__wrapper .footer__btn--pagenav:hover {
+  -webkit-filter: brightness(85%);
+          filter: brightness(85%);
+}
+
+.footer-top .footer__inner .footer__table {
+  margin: 0 auto;
+}
+
+.footer-top .footer__inner .footer__table .footer__line .footer__category {
+  font-family: "Georgia","Times","Times New Roman",serif;
+  font-weight: 100;
+  font-size: 20px;
+  width: 50%;
+}
+
+.footer-top .footer__inner .footer__table .footer__line .footer__address, .footer-top .footer__inner .footer__table .footer__line .footer__time, .footer-top .footer__inner .footer__table .footer__line .footer__holiday {
+  width: 60%;
+  font-family: "游明朝","Yu Mincho","YuMincho",serif;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.footer-top .footer__copy {
+  color: #FFFFFF;
+  background-color: #000000;
+  display: block;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  font-size: 14px;
+  font-family: "Georgia","Times","Times New Roman",serif;
+  font-weight: 400;
+  margin-top: 13px;
+}
+
+@media (max-width: 767px) {
+  .footer-top .footer__inner .footer__text {
+    font-size: 18px;
+  }
+  .footer-top .footer__inner .footer__wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .footer-top .footer__inner .footer__wrapper .footer__tel {
+    font-size: 18px;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  .footer-top .footer__inner .footer__wrapper .footer__logo {
+    width: 80px;
+    height: auto;
+    margin: 10px 0;
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+  }
+  .footer-top .footer__inner .footer__wrapper .footer__logo .footer__img {
+    width: 100%;
+  }
+  .footer-top .footer__inner .footer__wrapper .footer__btn--pagenav {
+    margin-top: 34px;
+    font-size: 16px;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  .footer-top .footer__inner .footer__table {
+    width: 90%;
+  }
+  .footer-top .footer__inner .footer__table .footer__line {
+    height: 45px;
+  }
+  .footer-top .footer__inner .footer__table .footer__line .footer__category {
+    font-size: 15px;
+    text-align: center;
+    padding: 0 10px;
+  }
+  .footer-top .footer__inner .footer__table .footer__line .footer__address, .footer-top .footer__inner .footer__table .footer__line .footer__time, .footer-top .footer__inner .footer__table .footer__line .footer__holiday {
+    font-size: 15px;
+  }
+}
+/*# sourceMappingURL=style.css.map */
