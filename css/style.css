@@ -85,6 +85,12 @@
   margin: 23px 31px 0 0;
 }
 
+.header-top .header__btn--pagenav a {
+  display: block;
+  height: 100%;
+  padding-top: 6%;
+}
+
 .header-top .header__btn--pagenav:hover {
   -webkit-filter: brightness(85%);
           filter: brightness(85%);
@@ -234,6 +240,14 @@
     left: 50%;
     -webkit-transform: translate(-50%, 0);
             transform: translate(-50%, 0);
+  }
+  .header-top .header__btn--pagenav a {
+    display: block;
+    height: 100%;
+    padding-top: 6%;
+  }
+  .header-top .header__btn--pagenav .header__btn--link {
+    padding-top: 4%;
   }
 }
 
@@ -674,6 +688,14 @@
   font-weight: Bold;
   font-size: 22px;
   margin-top: -40px;
+  position: relative;
+  z-index: 3;
+}
+
+.main-top .stylist-top .stylist__btn--view a {
+  display: block;
+  height: 100%;
+  padding-top: 4%;
 }
 
 .main-top .stylist-top .stylist__btn--view:hover {
@@ -707,6 +729,9 @@
   .main-top .stylist-top .stylist__btn--view {
     font-size: 16px;
     margin-top: 0px;
+  }
+  .main-top .stylist-top .stylist__btn--view .stylist__btn--link {
+    padding-top: 6%;
   }
 }
 
@@ -788,6 +813,12 @@
   font-family: "Georgia","Times","Times New Roman",serif;
   font-weight: Bold;
   font-size: 22px;
+}
+
+.main-top .menu-top .menu__btn--view a {
+  display: block;
+  height: 100%;
+  padding-top: 4%;
 }
 
 .main-top .menu-top .menu__btn--view:hover {
@@ -875,6 +906,9 @@
   .main-top .menu-top .menu__btn--view {
     font-size: 16px;
   }
+  .main-top .menu-top .menu__btn--view .menu__btn--link {
+    padding-top: 6%;
+  }
 }
 
 .main-top .hair-top {
@@ -943,6 +977,12 @@
   font-size: 22px;
 }
 
+.main-top .hair-top .hair__btn--view a {
+  display: block;
+  height: 100%;
+  padding-top: 4%;
+}
+
 .main-top .hair-top .hair__btn--view:hover {
   -webkit-filter: brightness(75%);
           filter: brightness(75%);
@@ -971,6 +1011,9 @@
   }
   .main-top .hair-top .hair__btn--view {
     font-size: 16px;
+  }
+  .main-top .hair-top .hair__btn--view .hair__btn--link {
+    padding-top: 6%;
   }
 }
 
@@ -1006,6 +1049,12 @@
   font-size: 22px;
 }
 
+.main-top .blog-top .blog__btn--view a {
+  display: block;
+  height: 100%;
+  padding-top: 4%;
+}
+
 .main-top .blog-top .blog__btn--view:hover {
   -webkit-filter: brightness(75%);
           filter: brightness(75%);
@@ -1020,6 +1069,9 @@
   }
   .main-top .blog-top .blog__btn--view {
     font-size: 16px;
+  }
+  .main-top .blog-top .blog__btn--view .blog__btn--link {
+    padding-top: 6%;
   }
 }
 
@@ -1163,6 +1215,12 @@
   margin: 32px 0 40px 40%;
 }
 
+.main-top .access-top .access__btn--view a {
+  display: block;
+  height: 100%;
+  padding-top: 4%;
+}
+
 .main-top .access-top .access__btn--view:hover {
   -webkit-filter: brightness(75%);
           filter: brightness(75%);
@@ -1223,6 +1281,9 @@
   .main-top .access-top .access__btn--view {
     font-size: 16px;
     margin: 32px 0 40px 0;
+  }
+  .main-top .access-top .access__btn--view .access__btn--link {
+    padding-top: 6%;
   }
 }
 
@@ -1286,6 +1347,12 @@
   font-family: "Georgia","Times","Times New Roman",serif;
   font-weight: Bold;
   font-size: 20px;
+}
+
+.footer-top .footer__inner .footer__wrapper .footer__btn--pagenav a {
+  display: block;
+  height: 100%;
+  padding-top: 6%;
 }
 
 .footer-top .footer__inner .footer__wrapper .footer__btn--pagenav:hover {
@@ -1370,6 +1437,613 @@
     padding: 0 10px;
   }
   .footer-top .footer__inner .footer__table .footer__line .footer__address, .footer-top .footer__inner .footer__table .footer__line .footer__time, .footer-top .footer__inner .footer__table .footer__line .footer__holiday {
+    font-size: 15px;
+  }
+}
+
+/* ========================================
+            下層ページ（アクセス）
+========================================= */
+/* ========================================
+                ヘッダー
+========================================= */
+.header-access, .header-access.scroll-nav {
+  font-family: "Georgia","Times","Times New Roman",serif;
+  font-weight: Bold;
+  width: 100%;
+  height: 140px;
+  font-size: 20px;
+  background-color: rgba(0, 0, 0, 0);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  position: fixed;
+  z-index: 20;
+}
+
+.header-access .header__logo, .header-access.scroll-nav .header__logo {
+  width: 70px;
+  height: auto;
+  margin: 20px 50px 0 20px;
+}
+
+.header-access .header__inner, .header-access.scroll-nav .header__inner {
+  margin-top: 37px;
+  text-shadow: 1px 0 0 #dbba03, 0 1px 0 #dbba03, -1px 0 0 #dbba03, 0 -1px 0 #dbba03;
+}
+
+.header-access .header__inner .global-nav__list, .header-access.scroll-nav .header__inner .global-nav__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.header-access .header__inner .global-nav__list .global-nav__item {
+  margin-right: 50px;
+}
+
+.header-access .header__btn--pagenav, .header-access.scroll-nav .header__btn--pagenav {
+  width: 240px;
+  height: 56px;
+  text-align: center;
+  background-color: #00ffff;
+  border-radius: 10px;
+  -webkit-box-shadow: 3px 3px 10px 0px rgba(255, 255, 255, 0.5) inset, -3px -5px 10px 0px rgba(0, 0, 0, 0.5) inset;
+          box-shadow: 3px 3px 10px 0px rgba(255, 255, 255, 0.5) inset, -3px -5px 10px 0px rgba(0, 0, 0, 0.5) inset;
+  margin: 23px 31px 0 0;
+}
+
+.header-access .header__btn--pagenav a, .header-access.scroll-nav .header__btn--pagenav a {
+  display: block;
+  height: 100%;
+  padding-top: 6%;
+}
+
+.header-access .header__btn--pagenav:hover, .header-access.scroll-nav .header__btn--pagenav:hover {
+  -webkit-filter: brightness(85%);
+          filter: brightness(85%);
+}
+
+.header-access .btn__js, .header-access.scroll-nav .btn__js {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  width: 48px;
+  height: 48px;
+  z-index: 20;
+  border: none;
+}
+
+.header-access .btn__js .btn__line, .header-access.scroll-nav .btn__js .btn__line {
+  display: block;
+  position: relative;
+  width: 70%;
+  height: 3px;
+  background-color: #267cfd;
+  -webkit-transition: .2s;
+  transition: .2s;
+  top: 0px;
+  right: -5px;
+}
+
+.header-access .btn__js .btn__line::before, .header-access .btn__js .btn__line::after {
+  content: "";
+  position: absolute;
+  right: 0.5px;
+  width: 100%;
+  height: 100%;
+  background-color: #267cfd;
+  -webkit-transition: .5s;
+  transition: .5s;
+  -webkit-transform: translateY(-16px);
+          transform: translateY(-16px);
+  margin-top: 3px;
+}
+
+.header-access .btn__js .btn__line::after {
+  -webkit-transform: translateY(16px);
+          transform: translateY(16px);
+  margin-top: -3px;
+}
+
+.header-access .btn__js .btn__line.open {
+  background-color: transparent;
+}
+
+.header-access .btn__js .btn__line.open::before, .header-access .btn__js .open.btn__line::after {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  margin-top: 0;
+  background-color: red;
+}
+
+.header-access .btn__js .btn__line.open::after {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  margin-top: 0;
+  background-color: red !important;
+}
+
+@media (min-width: 768px) {
+  .header-access .btn__js, .header-access.scroll-nav .btn__js {
+    display: none;
+  }
+}
+
+@media (max-width: 1400px) {
+  .header-access .header__inner, .header-access.scroll-nav .header__inner {
+    margin-top: 10px;
+  }
+  .header-access .header__inner .global-nav, .header-access.scroll-nav .header__inner .global-nav {
+    line-height: 3;
+  }
+  .header-access .header__btn--pagenav, .header-access.scroll-nav .header__btn--pagenav {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 868px) {
+  .header-access .header__inner, .header-access.scroll-nav .header__inner {
+    margin-top: 25px;
+  }
+  .header-access .header__inner .global-nav, .header-access.scroll-nav .header__inner .global-nav {
+    line-height: 2;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 767px) {
+  .header-access, .header-access.scroll-nav {
+    height: 91px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .header-access .header__logo, .header-access.scroll-nav .header__logo {
+    margin-top: 10px;
+  }
+  .header-access .header__logo .header__img, .header-access.scroll-nav .header__logo .header__img {
+    width: 50px;
+  }
+  .header-access .header__inner .global-nav, .header-access.scroll-nav .header__inner .global-nav {
+    line-height: 4;
+    font-size: 16px;
+    padding-left: 30px;
+    position: fixed;
+    top: 135px;
+    right: -100%;
+    width: 100%;
+    height: 100%;
+    -webkit-transition: 0.7s;
+    transition: 0.7s;
+  }
+  .header-access .header__inner .global-nav.open {
+    right: 0px;
+    top: 0;
+    -webkit-transition: 0.7s;
+    transition: 0.7s;
+    padding-top: 135px;
+    background-color: rgba(183, 255, 255, 0.75);
+    font-size: 20px;
+  }
+  .header-access .header__inner .global-nav .global-nav__list {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .header-access .header__btn--pagenav, .header-access.scroll-nav .header__btn--pagenav {
+    width: 240px;
+    height: 56px;
+    text-align: center;
+    background-color: #00ffff;
+    border-radius: 10px;
+    -webkit-box-shadow: 3px 3px 10px 0px rgba(255, 255, 255, 0.5) inset, -3px -5px 10px 0px rgba(0, 0, 0, 0.5) inset;
+            box-shadow: 3px 3px 10px 0px rgba(255, 255, 255, 0.5) inset, -3px -5px 10px 0px rgba(0, 0, 0, 0.5) inset;
+    width: 40%;
+    height: 44px;
+    position: absolute;
+    margin: 0;
+    top: 21px;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+  }
+  .header-access .header__btn--pagenav a, .header-access.scroll-nav .header__btn--pagenav a {
+    display: block;
+    height: 100%;
+    padding-top: 6%;
+  }
+  .header-access .header__btn--pagenav .header__btn--link, .header-access.scroll-nav .header__btn--pagenav .header__btn--link {
+    padding-top: 4%;
+  }
+}
+
+.scroll-nav.header-access {
+  background-color: #FFFFFF;
+}
+
+/* ========================================
+            メインビジュアル
+========================================= */
+.main-access {
+  width: 100%;
+  /* ========================================
+                 キービジュアル
+    ========================================= */
+  /* ========================================
+                メインコンテンツ
+    ========================================= */
+}
+
+.main-access .key-access {
+  width: 100%;
+  height: 385px;
+  background-image: url(../img/access_header_bg.jpg);
+  background-image: -webkit-image-set(url(../img/access_header_bg.jpg) 1x, url(../img/access_header_bg@2x.jpg) 2x, url(../img/access_header_bg@3x.jpg) 3x);
+  background-image: image-set(url(../img/access_header_bg.jpg) 1x, url(../img/access_header_bg@2x.jpg) 2x, url(../img/access_header_bg@3x.jpg) 3x);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center 70%;
+  position: relative;
+}
+
+.main-access .key-access .key__title {
+  font-size: 45px;
+  font-family: "Georgia","Times","Times New Roman",serif;
+  font-weight: bold;
+  font-style: italic;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+          transform: translateY(-50%) translateX(-50%);
+  text-shadow: 1px 0 0 #dbba03, 0 1px 0 #dbba03, -1px 0 0 #dbba03, 0 -1px 0 #dbba03;
+}
+
+@media (max-width: 1199px) {
+  .main-access .key-access {
+    height: 290px;
+  }
+}
+
+@media (max-width: 767px) {
+  .main-access .key-access {
+    height: 200px;
+  }
+  .main-access .key-access .key__title {
+    font-size: 25px;
+    font-family: "Georgia","Times","Times New Roman",serif;
+    font-weight: bold;
+  }
+}
+
+.main-access .contents-access {
+  width: 100%;
+  height: auto;
+  background-image: url(../img/access_main_bg.jpg);
+  background-image: -webkit-image-set(url(../img/access_main_bg.jpg) 1x, url(../img/access_main_bg@2x.jpg) 2x, url(../img/access_main_bg@3x.jpg) 3x);
+  background-image: image-set(url(../img/access_main_bg.jpg) 1x, url(../img/access_main_bg@2x.jpg) 2x, url(../img/access_main_bg@3x.jpg) 3x);
+  padding: 30px 0;
+}
+
+.main-access .contents-access .contents__inner {
+  max-width: 1180px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.main-access .contents-access .contents__inner .contents {
+  /* ========================================
+                                パンくずリスト
+                ========================================= */
+  /* ========================================
+                                アクセス情報
+                ========================================= */
+}
+
+.main-access .contents-access .contents__inner .contents__breadcrumb {
+  margin-bottom: 30px;
+}
+
+.main-access .contents-access .contents__inner .contents__breadcrumb .breadcrumb__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.main-access .contents-access .contents__inner .contents__breadcrumb .breadcrumb__list .breadcrumb__item {
+  font-size: 20px;
+}
+
+.main-access .contents-access .contents__inner .contents__breadcrumb .breadcrumb__list .breadcrumb__item:first-child {
+  font-family: "游明朝","Yu Mincho","YuMincho",serif;
+  font-weight: 400;
+}
+
+.main-access .contents-access .contents__inner .contents__breadcrumb .breadcrumb__list .breadcrumb__item:first-child::after {
+  content: '>';
+  display: inline-block;
+  padding: 0 5px;
+}
+
+.main-access .contents-access .contents__inner .contents__breadcrumb .breadcrumb__list .breadcrumb__item:last-child {
+  font-family: "Georgia","Times","Times New Roman",serif;
+  font-weight: 100;
+}
+
+.main-access .contents-access .contents__inner .contents__thumb {
+  width: 100%;
+  height: auto;
+}
+
+.main-access .contents-access .contents__inner .contents__thumb .contents__img {
+  width: 100%;
+}
+
+.main-access .contents-access .contents__inner .contents__intro {
+  width: 100%;
+  height: auto;
+  margin: 84px 0;
+}
+
+.main-access .contents-access .contents__inner .contents__intro .contents__line {
+  width: 80%;
+  font-size: 22px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 auto;
+  border-bottom: 1px dotted #7d7d7d;
+  padding: 15px 0;
+}
+
+.main-access .contents-access .contents__inner .contents__intro .contents__line .contents__category {
+  width: 50%;
+  font-family: "Georgia","Times","Times New Roman",serif;
+  font-weight: 100;
+  margin: auto 0;
+}
+
+.main-access .contents-access .contents__inner .contents__intro .contents__line:nth-of-type(10) .contents__category, .main-access .contents-access .contents__inner .contents__intro .contents__line:nth-of-type(11) .contents__category {
+  font-family: "游明朝","Yu Mincho","YuMincho",serif;
+  font-weight: 400;
+}
+
+.main-access .contents-access .contents__inner .contents__intro .contents__line .contents__tel, .main-access .contents-access .contents__inner .contents__intro .contents__line .contents__address, .main-access .contents-access .contents__inner .contents__intro .contents__line .contents__time, .main-access .contents-access .contents__inner .contents__intro .contents__line .contents__holiday, .main-access .contents-access .contents__inner .contents__intro .contents__line .contents__card, .main-access .contents-access .contents__inner .contents__intro .contents__line .contents__price, .main-access .contents-access .contents__inner .contents__intro .contents__line .contents__staff, .main-access .contents-access .contents__inner .contents__intro .contents__line .contents__seat, .main-access .contents-access .contents__inner .contents__intro .contents__line .contents__parking, .main-access .contents-access .contents__inner .contents__intro .contents__line .contents__conditions, .main-access .contents-access .contents__inner .contents__intro .contents__line .contents__remarks {
+  font-family: "游明朝","Yu Mincho","YuMincho",serif;
+  font-weight: 400;
+  width: 50%;
+}
+
+.main-access .contents-access .contents__inner .contents__map {
+  width: 100%;
+  max-width: 1180px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.main-access .contents-access .contents__inner .contents__map .contents__img {
+  width: 100%;
+}
+
+@media (max-width: 1000px) {
+  .main-access .contents-access .contents__inner .contents__intro .contents__line {
+    font-size: 18px;
+    padding: 15px 0;
+  }
+  .main-access .contents-access .contents__inner .contents__intro .contents__line .contents__tel, .main-access .contents-access .contents__inner .contents__intro .contents__line .contents__address, .main-access .contents-access .contents__inner .contents__intro .contents__line .contents__time, .main-access .contents-access .contents__inner .contents__intro .contents__line .contents__holiday, .main-access .contents-access .contents__inner .contents__intro .contents__line .contents__card, .main-access .contents-access .contents__inner .contents__intro .contents__line .contents__price, .main-access .contents-access .contents__inner .contents__intro .contents__line .contents__staff, .main-access .contents-access .contents__inner .contents__intro .contents__line .contents__seat, .main-access .contents-access .contents__inner .contents__intro .contents__line .contents__parking, .main-access .contents-access .contents__inner .contents__intro .contents__line .contents__conditions, .main-access .contents-access .contents__inner .contents__intro .contents__line .contents__remarks {
+    font-family: "游明朝","Yu Mincho","YuMincho",serif;
+    font-weight: 400;
+    width: 60%;
+  }
+}
+
+@media (max-width: 767px) {
+  .main-access .contents-access {
+    padding-top: 15px;
+  }
+  .main-access .contents-access .contents__inner .contents {
+    /* ========================================
+                                    パンくずリスト
+                    ========================================= */
+    /* ========================================
+                                    アクセス情報
+                    ========================================= */
+  }
+  .main-access .contents-access .contents__inner .contents__breadcrumb {
+    margin-bottom: 15px;
+  }
+  .main-access .contents-access .contents__inner .contents__breadcrumb .breadcrumb__list .breadcrumb__item {
+    font-size: 16px;
+  }
+  .main-access .contents-access .contents__inner .contents__intro {
+    width: 100%;
+    height: auto;
+    margin: 20px 0 30px 0;
+  }
+  .main-access .contents-access .contents__inner .contents__intro .contents__line {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+  }
+  .main-access .contents-access .contents__inner .contents__intro .contents__line .contents__tel, .main-access .contents-access .contents__inner .contents__intro .contents__line .contents__address, .main-access .contents-access .contents__inner .contents__intro .contents__line .contents__time, .main-access .contents-access .contents__inner .contents__intro .contents__line .contents__holiday, .main-access .contents-access .contents__inner .contents__intro .contents__line .contents__card, .main-access .contents-access .contents__inner .contents__intro .contents__line .contents__price, .main-access .contents-access .contents__inner .contents__intro .contents__line .contents__staff, .main-access .contents-access .contents__inner .contents__intro .contents__line .contents__seat, .main-access .contents-access .contents__inner .contents__intro .contents__line .contents__parking, .main-access .contents-access .contents__inner .contents__intro .contents__line .contents__conditions, .main-access .contents-access .contents__inner .contents__intro .contents__line .contents__remarks {
+    font-family: "游明朝","Yu Mincho","YuMincho",serif;
+    font-weight: 400;
+    width: 50%;
+  }
+  .main-access .contents-access .contents__inner .contents__intro .contents__line .contents__card {
+    overflow-wrap: break-word;
+  }
+  .main-access .contents-access .contents__inner .contents__intro .contents__line .contents__conditions {
+    font-size: 12px;
+  }
+  .main-access .contents-access .contents__inner .contents__map .contents__img {
+    height: 270px;
+  }
+}
+
+/* ========================================
+                フッター
+========================================= */
+.footer-access {
+  width: 100%;
+  height: auto;
+  text-align: center;
+  padding-top: 42px;
+  background-image: url(../img/top_footer_pattern.jpg);
+  background-image: -webkit-image-set(url(../img/top_footer_pattern.jpg) 1x, url(../img/top_footer_pattern@2x.jpg) 2x, url(../img/top_footer_pattern@3x.jpg) 3x);
+  background-image: image-set(url(../img/top_footer_pattern.jpg) 1x, url(../img/top_footer_pattern@2x.jpg) 2x, url(../img/top_footer_pattern@3x.jpg) 3x);
+}
+
+.footer-access .footer__inner {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.footer-access .footer__inner .footer__text {
+  font-size: 20px;
+  font-family: "游明朝","Yu Mincho","YuMincho",serif;
+  font-weight: 900;
+}
+
+.footer-access .footer__inner .footer__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 20px 0;
+}
+
+.footer-access .footer__inner .footer__wrapper .footer__tel {
+  font-size: 25px;
+  font-family: "游明朝","Yu Mincho","YuMincho",serif;
+  font-weight: 900;
+}
+
+.footer-access .footer__inner .footer__wrapper .footer__logo {
+  width: 130px;
+  height: 185px;
+  margin: 0 10%;
+}
+
+.footer-access .footer__inner .footer__wrapper .footer__btn--pagenav {
+  width: 240px;
+  height: 56px;
+  text-align: center;
+  background-color: #00ffff;
+  border-radius: 10px;
+  -webkit-box-shadow: 3px 3px 10px 0px rgba(255, 255, 255, 0.5) inset, -3px -5px 10px 0px rgba(0, 0, 0, 0.5) inset;
+          box-shadow: 3px 3px 10px 0px rgba(255, 255, 255, 0.5) inset, -3px -5px 10px 0px rgba(0, 0, 0, 0.5) inset;
+  font-family: "Georgia","Times","Times New Roman",serif;
+  font-weight: Bold;
+  font-size: 20px;
+}
+
+.footer-access .footer__inner .footer__wrapper .footer__btn--pagenav a {
+  display: block;
+  height: 100%;
+  padding-top: 6%;
+}
+
+.footer-access .footer__inner .footer__wrapper .footer__btn--pagenav:hover {
+  -webkit-filter: brightness(85%);
+          filter: brightness(85%);
+}
+
+.footer-access .footer__inner .footer__table {
+  margin: 0 auto;
+}
+
+.footer-access .footer__inner .footer__table .footer__line .footer__category {
+  font-family: "Georgia","Times","Times New Roman",serif;
+  font-weight: 100;
+  font-size: 20px;
+  width: 50%;
+}
+
+.footer-access .footer__inner .footer__table .footer__line .footer__address, .footer-access .footer__inner .footer__table .footer__line .footer__time, .footer-access .footer__inner .footer__table .footer__line .footer__holiday {
+  width: 60%;
+  font-family: "游明朝","Yu Mincho","YuMincho",serif;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.footer-access .footer__copy {
+  color: #FFFFFF;
+  background-color: #000000;
+  display: block;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  font-size: 14px;
+  font-family: "Georgia","Times","Times New Roman",serif;
+  font-weight: 400;
+  margin-top: 13px;
+}
+
+@media (max-width: 767px) {
+  .footer-access .footer__inner .footer__text {
+    font-size: 18px;
+  }
+  .footer-access .footer__inner .footer__wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .footer-access .footer__inner .footer__wrapper .footer__tel {
+    font-size: 18px;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  .footer-access .footer__inner .footer__wrapper .footer__logo {
+    width: 80px;
+    height: auto;
+    margin: 10px 0;
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+  }
+  .footer-access .footer__inner .footer__wrapper .footer__logo .footer__img {
+    width: 100%;
+  }
+  .footer-access .footer__inner .footer__wrapper .footer__btn--pagenav {
+    margin-top: 34px;
+    font-size: 16px;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  .footer-access .footer__inner .footer__table {
+    width: 90%;
+  }
+  .footer-access .footer__inner .footer__table .footer__line {
+    height: 45px;
+  }
+  .footer-access .footer__inner .footer__table .footer__line .footer__category {
+    font-size: 15px;
+    text-align: center;
+    padding: 0 10px;
+  }
+  .footer-access .footer__inner .footer__table .footer__line .footer__address, .footer-access .footer__inner .footer__table .footer__line .footer__time, .footer-access .footer__inner .footer__table .footer__line .footer__holiday {
     font-size: 15px;
   }
 }

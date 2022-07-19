@@ -2,8 +2,10 @@
 $(window).scroll(function() {
     if($(window).scrollTop() > 10) {
         $('#header-top').addClass('scroll-nav')
+        $('#header-access').addClass('scroll-nav')
     } else {
         $('#header-top').removeClass('scroll-nav')
+        $('#header-access').removeClass('scroll-nav')
     };
 });
 
@@ -62,12 +64,33 @@ $(function() {
       $('.global-nav').removeClass('open');
     });
   });
-// ハイパーリンクの場所へスクロールする
+
+  // ハイパーリンクの場所へスクロールする
 $('a[href*="#"]').click(function () {
     var elmHash = $(this).attr('href'); //ページ内リンクのHTMLタグhrefから、リンクされているエリアidの値を取得
     var pos = $(elmHash).offset().top-140;//idの上部の距離からHeaderの高さを引いた値を取得
     $('body,html').animate({scrollTop: pos}, 500); //取得した位置にスクロール。500の数値が大きくなるほどゆっくりスクロール
     return false;
 });
+// 以下は別ページへの移動
+$(window).on('load', function() {
+	// ページのURLを取得
+	const url = $(location).attr('href'),
+	// headerの高さを取得してその値をheaderHeightに代入
+	headerHeight = $('header').outerHeight();
+
+	// urlに「#」が含まれていれば
+	if(url.indexOf("#") != -1){
+		// urlを#で分割して配列に格納
+		const anchor = url.split("#"),
+		// 分割した最後の文字列（#◯◯の部分）をtargetに代入
+		target = $('#' + anchor[anchor.length - 1]),
+		// リンク先の位置からheaderHeightの高さを引いた値をpositionに代入
+		position = Math.floor(target.offset().top) - headerHeight;
+		// positionの位置に移動
+		$("html, body").animate({scrollTop:position}, 0);
+	}
+});
+
 // 要素をふわっと表示する
 AOS.init();  
