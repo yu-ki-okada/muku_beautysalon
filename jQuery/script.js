@@ -1,3 +1,6 @@
+// 要素をふわっと表示する
+AOS.init();
+
 // スクロールするとヘッダーを変更（透明から白へ）
 $(window).scroll(function() {
     if($(window).scrollTop() > 10) {
@@ -26,14 +29,14 @@ let mySwiper1 = new Swiper('.slider1', {
 let mySwiper2 = new Swiper('.slider2', {
     // 以下はオプション設定
     loop: true, // ループの指定
-    effect: "cube", //エフェクト＝キューブの指定
+    effect: "slide", //エフェクト＝slideの指定
     autoplay: {
-        delay: 3000, //３秒後に次のスライドへ
+        delay: 2500, //2.5秒後に次のスライドへ
         disableOnInteraction: false,//ユーザーがスライダーを操作した後も自動再生し続ける
     },
-    speed: 1500, //1.5秒かけて切り替わる
+    speed: 1000, //1.0秒かけて切り替わる
     centeredSlides:true,// 現在のスライドを中央表示
-    slidesPerView: 1.0,
+    slidesPerView: 1.3,
     //ページネーション表示の設定
     pagination: { 
         el: '.swiper-pagination', //ページネーションの要素
@@ -92,5 +95,4 @@ $(window).on('load', function() {
 	}
 });
 
-// 要素をふわっと表示する
-AOS.init();  
+  

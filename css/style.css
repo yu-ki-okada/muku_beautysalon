@@ -1098,7 +1098,7 @@
 .main-top .recruit-top .recruit__text {
   font-family: "游明朝","Yu Mincho","YuMincho",serif;
   font-weight: 400;
-  font-size: 18px;
+  font-size: 30px;
   width: 35%;
   margin-left: 55%;
   position: absolute;
@@ -1165,8 +1165,9 @@
 }
 
 .main-top .access-top .access__wrapper .slider2 .access__pict-1, .main-top .access-top .access__wrapper .slider2 .access__pict-2, .main-top .access-top .access__wrapper .slider2 .access__pict-3 {
-  width: 100%;
+  width: 93%;
   max-width: 666px;
+  margin: 0 auto;
 }
 
 .main-top .access-top .access__wrapper .slider2 .access__pict-1 .access__img, .main-top .access-top .access__wrapper .slider2 .access__pict-2 .access__img, .main-top .access-top .access__wrapper .slider2 .access__pict-3 .access__img {
@@ -1268,7 +1269,6 @@
     max-width: none;
   }
   .main-top .access-top .access__wrapper .slider2 .access__pict-1, .main-top .access-top .access__wrapper .slider2 .access__pict-2, .main-top .access-top .access__wrapper .slider2 .access__pict-3 {
-    width: 100%;
     max-width: none;
   }
   .main-top .access-top .access__wrapper .access__table {

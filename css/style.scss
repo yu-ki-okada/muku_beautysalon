@@ -1038,7 +1038,7 @@
             }
             &__text {
                 @include yumincho(400);
-                font-size: 18px;
+                font-size: 30px;
                 width: 35%;
                 margin-left: 55%;
                 position: absolute;
@@ -1101,8 +1101,9 @@
                     max-width: 666px;
                     .access {
                         &__pict-1 {
-                            width: 100%;
+                            width: 93%;
                             max-width: 666px;
+                            margin: 0 auto;
                             .access__img {
                                 width: 100%;
                                 height: auto;
@@ -1191,7 +1192,6 @@
                         max-width: none;
                         .access {
                             &__pict-1 {
-                                width: 100%;
                                 max-width: none;   
                             }   
                         }
