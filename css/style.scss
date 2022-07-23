@@ -16,8 +16,8 @@
     width: 227px;
     height: 44px;
     text-align: center;
-    background-color: #908a32;
-    color: #FFFFFF;
+    background-color: #e4e8e8;
+    color: #282c2c;
     border-radius: 10px;
     box-shadow: 3px 5px 10px 0px rgba(255,255,255,1) inset, -3px -5px 10px 0px rgba(0,0,0,0.9) inset;
     a {
@@ -31,7 +31,7 @@
     width: 240px;
     height: 56px;
     text-align: center;
-    background-color: #00ffff;
+    background-color: #e4e8e8;
     border-radius: 10px;
     box-shadow: 3px 3px 10px 0px rgba(255,255,255,0.5) inset, -3px -5px 10px 0px rgba(0,0,0,0.5) inset;
     a {
@@ -320,7 +320,8 @@
 }
 .header-top.scroll-nav {
     @extend .header-top;
-    background-color: #FFFFFF;
+    background-image: url(../img/top_header_scroll.jpg);
+    background-image: image-set(url(../img/top_header_scroll.jpg) 1x, url(../img/top_header_scroll@2x.jpg) 2x, url(../img/top_header_scroll@3x.jpg) 3x);
 }
 /* ========================================
             メインビジュアル
@@ -465,6 +466,7 @@
         background-image: url(../img/top_greeting_bg.jpg);
         background-image: image-set(url(../img/top_greeting_bg.jpg) 1x, url(../img/top_greeting_bg@2x.jpg) 2x, url(../img/top_greeting_bg@3x.jpg) 3x);
         margin-top: 70px;
+        text-align: center;
         .greeting__title {
             @include georgia(Bold);
             font-size: 45px;
@@ -476,19 +478,42 @@
             display: flex;
             justify-content:center;
             width: 100%;
-            padding-left: 10%;
+            padding-left: 6%;
             @include yumincho(400);
             font-size: 18px;
             .greeting {
                 &__text {
                     width: 35%;
                     margin-right: 10%;
+                    text-align: left;
+                    line-height: 2;
                 }
                 &__thumb {
                     width: 50%;
                     max-width: 556px;
                     .greeting__img {
                         width: 100%;
+                    }
+                }
+            }
+        }
+        .greeting__btn--view {
+            @include view;
+            @include georgia(Bold);
+            font-size: 22px;
+            position: relative;
+            margin-top: -64px;
+            z-index: 3;
+            
+            &:hover {
+                filter: brightness(75%);
+            }
+        }
+        @media(max-width: 1000px) {
+            .greeting__wrapper {
+                .greeting {
+                    &__text {
+                        font-size: 16px;
                     }
                 }
             }
@@ -509,24 +534,43 @@
                 flex-direction: column;
                 position: relative;
                 padding-left: 0;
-                font-size: 14px;
                 text-align: center;
                 .greeting {
                     &__text {
-                        width: 100%;
+                        width: 95%;
                         margin-right: 0;
+                        line-height: 2.6;
                         position: absolute;
                         z-index: 2;
-                        top: 55%;
+                        top: 40%;
                         text-shadow: 1px 0 0 #cfd6e5,
                                      0 1px 0 #cfd6e5,
                                      -1px 0 0 #cfd6e5,
                                      0 -1px 0 #cfd6e5;
+                        left: 50%;
+                        transform: translateX(-50%);             
                     }
                     &__thumb {
                         width: 100%;
                         max-width: none;
                         
+                    }
+                }
+            }
+            .greeting__btn--view {
+                font-size: 16px;
+                .greeting__btn--link {
+                    padding-top: 6%;
+                }
+            }
+        }
+        @media (max-width: 575px) {
+            .greeting__wrapper {
+                .greeting {
+                    &__text {
+                        font-size: 14px;
+                        top: 35%;
+                        line-height: 1.5;
                     }
                 }
             }
@@ -594,8 +638,6 @@
                 position: relative;
                 font-size: 14px;
                 flex-direction: column;
-                
-            
                 margin: 0;
                 .about {
                     &__thumb {
@@ -607,6 +649,7 @@
                     }
                     &__text {
                         width: 100%;
+                        font-weight: bold;
                         bottom: 20%;
                         color: #067e28;
                         text-shadow: 1px 0 0 #f3f4f6,
@@ -637,88 +680,6 @@
                         text-align: center;
                     }
                 } 
-            }
-        }
-    }
-    /* ========================================
-                    スタイリスト
-    ========================================= */
-    .stylist-top {
-        width: 100%;
-        height: auto;
-        margin-top: 70px;
-        background-image: url(../img/top_stylist_bg.jpg);
-        background-image: image-set(url(../img/top_stylist_bg.jpg) 1x, url(../img/top_stylist_bg@2x.jpg) 2x, url(../img/top_stylist_bg@3x.jpg) 3x);
-        text-align: center;
-        .stylist__title {
-            @include georgia(Bold);
-            font-size: 45px;
-            font-style: italic;
-            text-align: center;
-            margin-bottom: 22px;
-        }
-        .stylist {
-            &__wrapper {
-                width: 100%;
-                max-width: 1180px;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                margin: 0 auto;
-                @include yumincho(400);
-                font-size: 18px;
-                .stylist {
-                    &__thumb {
-                        width: 50%;
-                        .stylist__img {
-                            width: 100%;
-                        }
-                    }
-                    &__text {
-                        width: 40%;
-                    }
-                }
-            }
-            &__btn--view {
-                @include view;
-                @include georgia(Bold);
-                font-size: 22px;
-                margin-top: -40px;
-                position: relative;
-                z-index: 3;
-                &:hover {
-                    filter: brightness(75%);
-                }
-            }
-        }
-        @media (max-width: 767px) {
-            margin-top: 40px;
-            .stylist__title {
-                font-size: 25px;
-                margin-bottom: 15px;
-            }
-            .stylist {
-                &__wrapper {
-                    flex-direction: column;
-                    font-size: 14px;
-                    .stylist {
-                        &__thumb {
-                            width: 100%;
-                            padding-left: 60px;
-                            margin-top: 10px;
-                        }
-                        &__text {
-                            width: 70%;
-                        }
-                    }   
-                }
-                &__btn--view {
-                    font-size: 16px;
-                    margin-top: 0px;
-                    .stylist__btn--link {
-                        padding-top: 6%;
-                    }
-                }
             }
         }
     }
@@ -1383,7 +1344,8 @@
 }
 .header-access.scroll-nav {
     @extend .header-access;
-    background-color: #FFFFFF;
+    background-image: url(../img/top_header_scroll.jpg);
+    background-image: image-set(url(../img/top_header_scroll.jpg) 1x, url(../img/top_header_scroll@2x.jpg) 2x, url(../img/top_header_scroll@3x.jpg) 3x);
 }
 /* ========================================
             メインビジュアル
